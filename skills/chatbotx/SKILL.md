@@ -21,7 +21,7 @@ metadata:
         description: ChatbotX workspace API key (ChatbotX Settings → Developer → API Keys).
       - name: CHATBOTX_API_URL
         required: true
-        description: Base API URL of the ChatbotX instance, e.g. https://app.chatbotx.io/api.
+        description: Base API URL of the ChatbotX instance, e.g. https://app.hitechcloud.vn/api.
       - name: CHATBOTX_ALLOW_SELF_SIGNED_CERT
         required: false
         description: Set to "true" to skip TLS certificate validation, e.g. for a local/self-signed instance.
@@ -65,11 +65,11 @@ npm install -g chatbotx
 
 # Save credentials once
 chatbotx config set --apiKey <yourApiKey> --apiUrl <yourApiUrl>
-# --apiUrl example: https://app.chatbotx.io/api
+# --apiUrl example: https://app.hitechcloud.vn/api
 
 # Or via environment variables (no config file written)
 export CHATBOTX_API_KEY="your_api_key"
-export CHATBOTX_API_URL="https://app.chatbotx.io/api"
+export CHATBOTX_API_URL="https://app.hitechcloud.vn/api"
 
 # Local dev / self-signed cert
 chatbotx config set --allowSelfSignedCert true

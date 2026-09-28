@@ -2,7 +2,7 @@ name: Upstream drift check
 
 # Checks the live, published `chatbotx` CLI (npm) and the live
 # `chatbotx-mcp` default tool set (fetched from hitechcloud-vietnam/ChatbotX's public
-# https://app.chatbotx.io/api/public-spec.json) against the hand-written
+# https://app.hitechcloud.vn/api/public-spec.json) against the hand-written
 # docs in skills/, and against the version pinned in upstream.json.
 #
 # Pull-only by design: this repo has no push access to hitechcloud-vietnam/ChatbotX

@@ -13,7 +13,7 @@
 - `chatbotx` skill: moved the per-command catalog to `skills/chatbotx/references/commands.md` and
   kept a one-line-per-group index in `SKILL.md`. The 1.1.0 note below announced this move, but the
   file did not ship until now.
-- Default MCP and CLI skill configuration to `https://app.chatbotx.io/api`; SaaS users now provide
+- Default MCP and CLI skill configuration to `https://app.hitechcloud.vn/api`; SaaS users now provide
   only an API key. Self-hosted instances still set their explicit `/api` URL.
 
 ## 1.1.0

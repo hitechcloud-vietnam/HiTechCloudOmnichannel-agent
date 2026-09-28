@@ -275,7 +275,7 @@ describe("diffSurface", () => {
 describe("renderReport", () => {
   const surface = {
     collectedAt: "2026-09-22T00:00:00.000Z",
-    specUrl: "https://app.chatbotx.io/api/public-spec.json",
+    specUrl: "https://app.hitechcloud.vn/api/public-spec.json",
     cli: { version: "1.8.4" },
     mcp: { version: "1.8.0" },
   };
@@ -383,7 +383,7 @@ describe("check-drift CLI entrypoint", () => {
     const pins = JSON.parse(readFileSync(join(REPO_ROOT, "upstream.json"), "utf8"));
     const matchingSurface = {
       collectedAt: "2026-09-22T00:00:00.000Z",
-      specUrl: "https://app.chatbotx.io/api/public-spec.json",
+      specUrl: "https://app.hitechcloud.vn/api/public-spec.json",
       cli: {
         version: pins.chatbotx,
         commands: parseCommandsDoc(realCommandsMd()),

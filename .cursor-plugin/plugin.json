@@ -4,9 +4,9 @@
   "description": "ChatbotX agentic workspace automation via CLI and MCP tools for contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging.",
   "author": {
     "name": "hitechcloud-vietnam",
-    "email": "support@chatbotx.io"
+    "email": "support@hitechcloud.vn"
   },
-  "homepage": "https://chatbotx.io",
+  "homepage": "https://hitechcloud.vn",
   "repository": "https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent",
   "license": "MIT-0",
   "logo": "assets/logo.svg",

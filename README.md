@@ -22,7 +22,7 @@ This repository intentionally excludes internal development skills.
 
 - A ChatbotX workspace API key (ChatbotX → Settings → Developer → API Keys). Prefer a read-only key
   for discovery and analytics tasks.
-- A base API URL only for a self-hosted instance. SaaS defaults to `https://app.chatbotx.io/api`.
+- A base API URL only for a self-hosted instance. SaaS defaults to `https://app.hitechcloud.vn/api`.
 - Node.js (the CLI documents Node 24+, the MCP server requires Node 18+).
 
 ## Install
@@ -67,7 +67,7 @@ the SaaS URL by default. To use the MCP server without the plugin:
 ```bash
 claude mcp add chatbotx \
   -e CHATBOTX_API_KEY=<your-token> \
-  -e CHATBOTX_API_URL=https://app.chatbotx.io/api \
+  -e CHATBOTX_API_URL=https://app.hitechcloud.vn/api \
   -e CHATBOTX_MCP_TRANSPORT=stdio \
   -s user \
   -- npx -y chatbotx-mcp
@@ -98,7 +98,7 @@ Then add the MCP server to `~/.codex/config.toml`:
 [mcp_servers.chatbotx]
 command = "npx"
 args = ["-y", "chatbotx-mcp"]
-env = { CHATBOTX_API_KEY = "<your-token>", CHATBOTX_API_URL = "https://app.chatbotx.io/api", CHATBOTX_MCP_TRANSPORT = "stdio" }
+env = { CHATBOTX_API_KEY = "<your-token>", CHATBOTX_API_URL = "https://app.hitechcloud.vn/api", CHATBOTX_MCP_TRANSPORT = "stdio" }
 ```
 
 ### Generic MCP clients (Windsurf, Gemini CLI, Copilot, ...)
@@ -113,7 +113,7 @@ repository root holds this block:
     "args": ["-y", "chatbotx-mcp"],
     "env": {
       "CHATBOTX_API_KEY": "<your-workspace-token>",
-      "CHATBOTX_API_URL": "https://app.chatbotx.io/api",
+      "CHATBOTX_API_URL": "https://app.hitechcloud.vn/api",
       "CHATBOTX_MCP_TRANSPORT": "stdio"
     }
   }
@@ -124,7 +124,7 @@ repository root holds this block:
 
 ```bash
 npm install -g chatbotx
-chatbotx config set --apiKey <your-workspace-token> --apiUrl https://app.chatbotx.io/api
+chatbotx config set --apiKey <your-workspace-token> --apiUrl https://app.hitechcloud.vn/api
 chatbotx capabilities list
 ```
 

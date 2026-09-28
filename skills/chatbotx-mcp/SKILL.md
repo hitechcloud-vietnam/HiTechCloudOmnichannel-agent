@@ -13,7 +13,7 @@ metadata:
         description: ChatbotX workspace API key (ChatbotX Settings → Developer → API Keys).
       - name: CHATBOTX_API_URL
         required: true
-        description: Base API URL of the ChatbotX instance, e.g. https://app.chatbotx.io/api.
+        description: Base API URL of the ChatbotX instance, e.g. https://app.hitechcloud.vn/api.
       - name: CHATBOTX_ALLOW_SELF_SIGNED_CERT
         required: false
         description: Set to "true" only for trusted local/self-hosted instances with self-signed TLS.
@@ -42,7 +42,7 @@ For MCP clients that support stdio servers:
     "args": ["-y", "chatbotx-mcp"],
     "env": {
       "CHATBOTX_API_KEY": "your_workspace_token",
-      "CHATBOTX_API_URL": "https://app.chatbotx.io/api",
+      "CHATBOTX_API_URL": "https://app.hitechcloud.vn/api",
       "CHATBOTX_MCP_TRANSPORT": "stdio"
     }
   }
@@ -54,7 +54,7 @@ For Claude Code:
 ```bash
 claude mcp add chatbotx \
   -e CHATBOTX_API_KEY=<your-token> \
-  -e CHATBOTX_API_URL=https://app.chatbotx.io/api \
+  -e CHATBOTX_API_URL=https://app.hitechcloud.vn/api \
   -e CHATBOTX_MCP_TRANSPORT=stdio \
   -s user \
   -- npx -y chatbotx-mcp

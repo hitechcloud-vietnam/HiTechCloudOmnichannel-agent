@@ -333,7 +333,7 @@ export async function main(
   } = {},
 ) {
   const opts = parseArgs(argv);
-  const apiUrl = opts.apiUrl ?? "https://app.chatbotx.io/api";
+  const apiUrl = opts.apiUrl ?? "https://app.hitechcloud.vn/api";
   const specUrl = opts.specUrl ?? `${apiUrl}/public-spec.json`;
 
   const cliVersion = opts.cliVersion ?? resolveNpmVersionImpl("chatbotx");

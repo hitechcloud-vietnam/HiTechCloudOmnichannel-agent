@@ -4,10 +4,10 @@
   "description": "ChatbotX for AI agents: the chatbotx CLI skill, the ChatbotX MCP server, and the MCP usage skill for contacts, conversations, flows, broadcasts, sequences, and analytics.",
   "author": {
     "name": "hitechcloud-vietnam",
-    "email": "support@chatbotx.io",
-    "url": "https://chatbotx.io"
+    "email": "support@hitechcloud.vn",
+    "url": "https://hitechcloud.vn"
   },
-  "homepage": "https://chatbotx.io",
+  "homepage": "https://hitechcloud.vn",
   "repository": "https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent",
   "license": "MIT-0",
   "keywords": ["chatbotx", "mcp", "cli", "automation", "ai-agent"],
@@ -18,7 +18,7 @@
       "args": ["-y", "chatbotx-mcp"],
       "env": {
         "CHATBOTX_API_KEY": "${user_config.api_key}",
-        "CHATBOTX_API_URL": "https://app.chatbotx.io/api",
+        "CHATBOTX_API_URL": "https://app.hitechcloud.vn/api",
         "CHATBOTX_MCP_TRANSPORT": "stdio"
       }
     }

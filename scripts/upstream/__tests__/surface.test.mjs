@@ -173,7 +173,7 @@ describe("collectCliSurface", () => {
 
     const surface = collectCliSurface({
       version: "1.8.4",
-      apiUrl: "https://app.chatbotx.io/api",
+      apiUrl: "https://app.hitechcloud.vn/api",
       runHelp,
     });
 
@@ -195,7 +195,7 @@ describe("collectCliSurface", () => {
       () =>
         collectCliSurface({
           version: "1.8.4",
-          apiUrl: "https://app.chatbotx.io/api",
+          apiUrl: "https://app.hitechcloud.vn/api",
           runHelp: () => ({ stdout: "Options:\n  --help\n", stderr: "" }),
         }),
       /root help.*Commands:/i,
@@ -229,7 +229,7 @@ describe("runNpxHelp", () => {
       () =>
         runNpxHelp({
           version: "1.8.4",
-          apiUrl: "https://app.chatbotx.io/api",
+          apiUrl: "https://app.hitechcloud.vn/api",
           tmpHome: "/tmp/chatbotx-drift",
           pathTokens: [],
           spawnSyncImpl: () => ({
