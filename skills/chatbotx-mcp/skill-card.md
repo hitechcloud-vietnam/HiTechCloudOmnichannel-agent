@@ -8,7 +8,7 @@ This skill is ready for commercial/non-commercial use.
 
 ## Owner
 
-hitechcloud-vietnam — ChatbotX agent distribution maintainers (github.com/hitechcloud-vietnam/chatbotx-agent).
+hitechcloud-vietnam — ChatbotX agent distribution maintainers (github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent).
 
 ## License/Terms of Use
 
@@ -49,7 +49,7 @@ Mitigation: Use the host IDE/plugin secret configuration, avoid committing `mcp.
 
 - This skill's `SKILL.md` — setup, default tool list, and MCP workflow.
 - Source MCP server: https://github.com/hitechcloud-vietnam/ChatbotX/tree/main/apps/mcp-server
-- ChatbotX agent distribution: https://github.com/hitechcloud-vietnam/chatbotx-agent
+- ChatbotX agent distribution: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent
 
 ## Skill Output
 

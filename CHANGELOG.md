@@ -19,7 +19,7 @@
 ## 1.1.0
 
 - Removed the root `SKILL.md`. Skills now live only under `skills/`, so `npx skills add
-  hitechcloud-vietnam/chatbotx-agent` lists both `chatbotx` and `chatbotx-mcp`, installs only the skill folder,
+  hitechcloud-vietnam/HiTechCloudOmnichannel-agent` lists both `chatbotx` and `chatbotx-mcp`, installs only the skill folder,
   and no longer needs `--full-depth`.
 - `chatbotx` skill is CLI-only: the command catalog stays in `SKILL.md` (moved to `references/` in 1.1.1),
   agents discover flags with `--help`, and the skill auto-installs the CLI when it is missing.
@@ -33,5 +33,5 @@
 
 - Initial ChatbotX agent distribution repository.
 - Published public `chatbotx` and `chatbotx-mcp` skills.
-- Added a root `SKILL.md` (copy of `skills/chatbotx/SKILL.md`) so `npx skills add hitechcloud-vietnam/chatbotx-agent` installs the CLI skill directly.
+- Added a root `SKILL.md` (copy of `skills/chatbotx/SKILL.md`) so `npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent` installs the CLI skill directly.
 - Added Cursor, Claude Code, Grok, Gemini, and generic MCP manifests.

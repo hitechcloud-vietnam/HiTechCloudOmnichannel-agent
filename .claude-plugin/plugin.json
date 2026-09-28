@@ -8,7 +8,7 @@
     "url": "https://chatbotx.io"
   },
   "homepage": "https://chatbotx.io",
-  "repository": "https://github.com/hitechcloud-vietnam/chatbotx-agent",
+  "repository": "https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent",
   "license": "MIT-0",
   "keywords": ["chatbotx", "mcp", "cli", "automation", "ai-agent"],
   "skills": ["./skills/chatbotx", "./skills/chatbotx-mcp"],

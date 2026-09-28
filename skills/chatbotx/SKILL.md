@@ -3,7 +3,7 @@ name: chatbotx
 description: Manage contacts, conversations, broadcasts, flows, sequences, appointments, minigames, and every other ChatbotX workspace resource from the command line.
 allowed-tools: Bash(chatbotx:*)
 version: 1.1.1
-homepage: https://github.com/hitechcloud-vietnam/chatbotx-agent/tree/main/skills/chatbotx
+homepage: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/tree/main/skills/chatbotx
 emoji: "🤖"
 metadata:
   openclaw:

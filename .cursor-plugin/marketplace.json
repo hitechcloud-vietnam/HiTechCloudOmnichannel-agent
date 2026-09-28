@@ -1,5 +1,5 @@
 {
-  "name": "chatbotx-agent",
+  "name": "HiTechCloudOmnichannel-agent",
   "owner": {
     "name": "hitechcloud-vietnam",
     "email": "support@chatbotx.io"
@@ -18,7 +18,7 @@
         "email": "support@chatbotx.io"
       },
       "homepage": "https://chatbotx.io",
-      "repository": "https://github.com/hitechcloud-vietnam/chatbotx-agent",
+      "repository": "https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent",
       "license": "MIT-0",
       "logo": "assets/logo.svg",
       "category": "productivity",

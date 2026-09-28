@@ -31,8 +31,8 @@ This repository intentionally excludes internal development skills.
 |---|---|---|
 | Claude Code | plugin (below) — installs both skills | started by the plugin; prompts only for the key |
 | Cursor | plugin (below) — installs both skills | started by the plugin; prompts only for the key |
-| Codex | `npx skills add hitechcloud-vietnam/chatbotx-agent` → `.agents/skills/` | `~/.codex/config.toml` block below |
-| Windsurf, Gemini CLI, Copilot, others | `npx skills add hitechcloud-vietnam/chatbotx-agent` | generic `mcp.json` block below |
+| Codex | `npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent` → `.agents/skills/` | `~/.codex/config.toml` block below |
+| Windsurf, Gemini CLI, Copilot, others | `npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent` | generic `mcp.json` block below |
 | Grok | `.grok-plugin/` manifest | included in the manifest |
 | Gemini CLI extension | — | `gemini-extension.json` |
 
@@ -40,14 +40,14 @@ This repository intentionally excludes internal development skills.
 
 ```bash
 # Pick one or both skills interactively
-npx skills add hitechcloud-vietnam/chatbotx-agent
+npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent
 
 # Or install a specific one
-npx skills add hitechcloud-vietnam/chatbotx-agent --skill chatbotx
-npx skills add hitechcloud-vietnam/chatbotx-agent --skill chatbotx-mcp
+npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --skill chatbotx
+npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --skill chatbotx-mcp
 
 # List what this repo publishes
-npx skills add hitechcloud-vietnam/chatbotx-agent --list
+npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --list
 ```
 
 Installing the `chatbotx` skill does not install the `chatbotx` binary. The skill tells the agent to
@@ -56,8 +56,8 @@ run `npm install -g chatbotx` on first use if the command is missing.
 ### Claude Code
 
 ```bash
-/plugin marketplace add hitechcloud-vietnam/chatbotx-agent
-/plugin install chatbotx@chatbotx-agent
+/plugin marketplace add hitechcloud-vietnam/HiTechCloudOmnichannel-agent
+/plugin install chatbotx@HiTechCloudOmnichannel-agent
 ```
 
 The plugin loads both skills and starts the ChatbotX MCP server. Claude Code asks only for the API
@@ -78,9 +78,9 @@ claude mcp add chatbotx \
 This repo ships a Cursor plugin at `.cursor-plugin/` (skills + MCP server + variables). Local install:
 
 ```bash
-git clone https://github.com/hitechcloud-vietnam/chatbotx-agent.git
+git clone https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent.git
 mkdir -p ~/.cursor/plugins/local
-ln -s "$(pwd)/chatbotx-agent" ~/.cursor/plugins/local/chatbotx
+ln -s "$(pwd)/HiTechCloudOmnichannel-agent" ~/.cursor/plugins/local/chatbotx
 ```
 
 Restart Cursor or run **Developer: Reload Window**, then set `CHATBOTX_API_KEY` in the plugin
@@ -89,7 +89,7 @@ configuration UI. For a self-hosted instance, replace the API URL in `.cursor-pl
 ### Codex
 
 ```bash
-npx skills add hitechcloud-vietnam/chatbotx-agent   # skills → .agents/skills/
+npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent   # skills → .agents/skills/
 ```
 
 Then add the MCP server to `~/.codex/config.toml`:
@@ -196,7 +196,7 @@ When the check finds drift, resolve it by:
 
 ### skills.sh
 
-No publish step. Push this public repository; `npx skills add hitechcloud-vietnam/chatbotx-agent` reads `skills/`.
+No publish step. Push this public repository; `npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent` reads `skills/`.
 
 ### ClawHub
 

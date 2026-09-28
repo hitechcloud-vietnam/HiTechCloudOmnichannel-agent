@@ -10,7 +10,7 @@ This skill is ready for commercial/non-commercial use.
 
 ## Owner
 
-hitechcloud-vietnam — ChatbotX agent distribution maintainers (github.com/hitechcloud-vietnam/chatbotx-agent).
+hitechcloud-vietnam — ChatbotX agent distribution maintainers (github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent).
 
 ## License/Terms of Use
 
