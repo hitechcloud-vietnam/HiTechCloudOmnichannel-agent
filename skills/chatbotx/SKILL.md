@@ -98,43 +98,43 @@ Errors come back as `{"error": true, "message": "...", "status": <httpStatus>}`.
 
 ```bash
 # 1. Discover what a workspace token can see
-chatbotx capabilities list
-chatbotx token list
+hitechcloudomnichannel capabilities list
+hitechcloudomnichanneloudomnichannel token list
 
 # 2. Look up the ids you need — most write commands take an id, not a name
-chatbotx inboxes list
-chatbotx contacts list --keyword "jane"
-chatbotx tags list
+hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichannel inboxes list
+hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel contacts list --keyword "jane"
+hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel tags list
 
 # 3. Act
-chatbotx contacts message send email:jane@example.com --text "Hi Jane!" --inboxId <inboxId>
+hitechcloudomnichannel contacts message send email:jane@example.com --text "Hi Jane!" --inboxId <inboxId>
 
 # 4. Verify
-chatbotx contacts messages list email:jane@example.com --perPage 5
+hitechcloudomnichannel contacts messages list email:jane@example.com --perPage 5
 ```
 
 The same shape applies to broadcasts and flows:
 
 ```bash
 # Broadcasts: count the audience, create, verify, stop if needed
-chatbotx contacts count --contactFilter <filter>
-chatbotx broadcasts create --channel <channel> --subaction <subaction> \
+hitechcloudomnichannel contacts count --contactFilter <filter>
+hitechcloudomnichannel broadcasts create --channel <channel> --subaction <subaction> \
   --schedulesType <schedulesType> --schedulesAt <schedulesAt> --contactFilter <filter>
-chatbotx broadcasts get <idOrName>
-chatbotx broadcasts stop add <id>
+hitechcloudomnichannel broadcasts get <idOrName>
+hitechcloudomnichannel broadcasts stop add <id>
 
 # Flows: validate the spec, then publish
-chatbotx flows validate --spec <spec>
-chatbotx flows publish add <id> --spec <spec>
+hitechcloudomnichannel flows validate --spec <spec>
+hitechcloudomnichannel flows publish add <id> --spec <spec>
 ```
 
 Help is available at every depth:
 
 ```bash
-chatbotx --help                          # every command group
-chatbotx contacts --help                 # actions in a group
-chatbotx contacts message --help         # subactions
-chatbotx contacts message send --help    # options for one action
+hitechcloudomnichannel --help                          # every command group
+hitechcloudomnichannel contacts --help                 # actions in a group
+hitechcloudomnichannel contacts message --help         # subactions
+hitechcloudomnichannel contacts message send --help    # options for one action
 ```
 
 ## Contact identifiers
@@ -201,7 +201,7 @@ workspace REST API directly instead of trying other flag combinations.
 - `broadcasts create` needs exactly one of `--flowId` or `--templateId`. `--schedulesAt` is
   required only when `--schedulesType future` and the broadcast is not saved as a draft.
 - Filter on the server with `--contactFilter` instead of filtering results client side.
-  `chatbotx contacts filter-fields` documents every supported field and operator.
+  `hitechcloudomnichannel contacts filter-fields` documents every supported field and operator.
 
 ## MCP alternative
 

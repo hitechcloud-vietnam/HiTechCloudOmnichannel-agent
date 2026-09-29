@@ -1,7 +1,7 @@
 {
-  "name": "chatbotx",
+  "name": "hitechcloudomnichannel",
   "version": "1.1.1",
-  "description": "ChatbotX agentic workspace automation. Manage contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging through CLI and MCP tools.",
+  "description": "HiTechCloudOmnichannel agentic workspace automation. Manage contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging through CLI and MCP tools.",
   "author": {
     "name": "hitechcloud-vietnam",
     "email": "support@hitechcloud.vn",
@@ -11,18 +11,18 @@
   "repository": "https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent",
   "license": "MIT-0",
   "logo": "assets/logo.svg",
-  "keywords": ["chatbotx", "chatbotx cli", "chatbotx mcp", "omnichannel automation", "ai-agent"],
-  "skills": ["./skills/chatbotx", "./skills/chatbotx-mcp"],
+  "keywords": ["hitechcloudomnichannel", "hitechcloudomnichannel cli", "hitechcloudomnichannel mcp", "omnichannel automation", "ai-agent"],
+  "skills": ["./skills/hitechcloudomnichannel", "./skills/hitechcloudomnichannel-mcp"],
   "mcpServers": {
-    "chatbotx": {
+    "hitechcloudomnichannel": {
       "command": "npx",
-      "args": ["-y", "chatbotx-mcp"],
+      "args": ["-y", "hitechcloudomnichannel-mcp"],
       "env": {
-        "CHATBOTX_API_KEY": "${CHATBOTX_API_KEY}",
-        "CHATBOTX_API_URL": "https://app.hitechcloud.vn/api",
-        "CHATBOTX_MCP_TRANSPORT": "stdio"
+        "HITECHCLOUDOMNICHANNEL_API_KEY": "${HITECHCLOUDOMNICHANNEL_API_KEY}",
+        "HITECHCLOUDOMNICHANNEL_API_URL": "https://app.hitechcloud.vn/api",
+        "HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT": "stdio"
       },
-      "note": "Starts the official ChatbotX MCP server over stdio. Requires CHATBOTX_API_KEY; edit the URL for a self-hosted instance."
+      "note": "Starts the official HiTechCloudOmnichannel MCP server over stdio. Requires HITECHCLOUDOMNICHANNEL_API_KEY; edit the URL for a self-hosted instance."
     }
   }
 }

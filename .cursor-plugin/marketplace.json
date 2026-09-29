@@ -5,14 +5,14 @@
     "email": "support@hitechcloud.vn"
   },
   "metadata": {
-    "description": "ChatbotX CLI and MCP workflows for AI agents"
+    "description": "HiTechCloudOmnichannel CLI and MCP workflows for AI agents"
   },
   "plugins": [
     {
-      "name": "chatbotx",
+      "name": "hitechcloudomnichannel",
       "source": "./",
       "version": "1.1.1",
-      "description": "ChatbotX agentic workspace automation via CLI and MCP tools for contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging.",
+      "description": "HiTechCloudOmnichannel agentic workspace automation via CLI and MCP tools for contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging.",
       "author": {
         "name": "hitechcloud-vietnam",
         "email": "support@hitechcloud.vn"
@@ -23,8 +23,8 @@
       "logo": "assets/logo.svg",
       "category": "productivity",
       "tags": ["chatbot", "messaging", "automation", "mcp", "ai-agent"],
-      "keywords": ["chatbotx", "omnichannel", "whatsapp", "messenger", "zalo", "telegram", "cli", "mcp"],
-      "skills": ["./skills/chatbotx", "./skills/chatbotx-mcp"],
+      "keywords": ["hitechcloudomnichannel", "omnichannel", "whatsapp", "messenger", "zalo", "telegram", "cli", "mcp"],
+      "skills": ["./skills/hitechcloudomnichannel", "./skills/hitechcloudomnichannel-mcp"],
       "mcpServers": "./.cursor-plugin/mcp.json"
     }
   ]

@@ -2,7 +2,7 @@
 
 ## Description
 
-ChatbotX MCP exposes ChatbotX workspace operations as Model Context Protocol tools so AI agents and IDEs can manage contacts, conversations, flows, broadcasts, sequences, analytics, and workspace automation with scope-aware API access.
+HiTechCloudOmnichannel MCP exposes HiTechCloudOmnichannel workspace operations as Model Context Protocol tools so AI agents and IDEs can manage contacts, conversations, flows, broadcasts, sequences, analytics, and workspace automation with scope-aware API access.
 
 This skill is ready for commercial/non-commercial use.
 

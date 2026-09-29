@@ -19,20 +19,20 @@ const REPO_ROOT = join(__dirname, "..", "..", "..");
 
 const realCommandsMd = () =>
   readFileSync(
-    join(REPO_ROOT, "skills/chatbotx/references/commands.md"),
+    join(REPO_ROOT, "skills/hitechcloudomnichannel/references/commands.md"),
     "utf8",
   );
 const realCliSkillMd = () =>
-  readFileSync(join(REPO_ROOT, "skills/chatbotx/SKILL.md"), "utf8");
+  readFileSync(join(REPO_ROOT, "skills/hitechcloudomnichannel/SKILL.md"), "utf8");
 const realMcpSkillMd = () =>
-  readFileSync(join(REPO_ROOT, "skills/chatbotx-mcp/SKILL.md"), "utf8");
+  readFileSync(join(REPO_ROOT, "skills/hitechcloudomnichannel-mcp/SKILL.md"), "utf8");
 
 describe("parseCommandsDoc", () => {
   test("reads a plain command line up to the first positional/flag", () => {
     const md = [
       "```bash",
-      "chatbotx contacts get <identifier>",
-      "chatbotx contacts create --email <email>",
+      "hitechcloudomnichannel contacts get <identifier>",
+      "hitechcloudomnichannel contacts create --email <email>",
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), [
@@ -44,7 +44,7 @@ describe("parseCommandsDoc", () => {
   test("expands a slash-separated sibling-action shorthand line", () => {
     const md = [
       "```bash",
-      "chatbotx sequences list / get / create / update / delete",
+      "hitechcloudomnichannel sequences list / get / create / update / delete",
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), [
@@ -59,7 +59,7 @@ describe("parseCommandsDoc", () => {
   test("keeps each shorthand sibling's own positional separate from the group", () => {
     const md = [
       "```bash",
-      "chatbotx ads campaigns-publish <id> / campaigns-pause <id> / campaigns-retry <id>",
+      "hitechcloudomnichannel ads campaigns-publish <id> / campaigns-pause <id> / campaigns-retry <id>",
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), [
@@ -72,7 +72,7 @@ describe("parseCommandsDoc", () => {
   test("strips a trailing comment without treating its '/' as shorthand", () => {
     const md = [
       "```bash",
-      "chatbotx external-webhooks list / create / delete            # [--provider make|n8n]",
+      "hitechcloudomnichannel external-webhooks list / create / delete            # [--provider make|n8n]",
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), [
@@ -85,7 +85,7 @@ describe("parseCommandsDoc", () => {
   test("does not produce a trailing-whitespace command when a comment follows extra spaces", () => {
     const md = [
       "```bash",
-      "chatbotx ads conversion-rules                              # see collisions",
+      "hitechcloudomnichanneloudomnichannel ads conversion-rules                              # see collisions",
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), ["ads conversion-rules"]);
@@ -93,9 +93,9 @@ describe("parseCommandsDoc", () => {
 
   test("ignores non-command lines and non-bash fences", () => {
     const md = [
-      "Some prose about `chatbotx contacts get` mentioned inline.",
+      "Some prose about `hitechcloudomnichanneloudomnichannel contacts get` mentioned inline.",
       "```json",
-      '{ "chatbotx": "not a command line" }',
+      '{ "hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichannel": "not a command line" }',
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), []);
@@ -215,7 +215,7 @@ describe("parseMcpDefaultTools", () => {
 });
 
 describe("diffSurface", () => {
-  const basePins = { chatbotx: "1.8.4", "chatbotx-mcp": "1.8.0" };
+  const basePins = { hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel: "1.8.4", "chatbotx-mcp": "1.8.0" };
   const baseSurface = {
     cli: { version: "1.8.4", commands: ["contacts list"], collisions: [] },
     mcp: { version: "1.8.0", defaultTools: ["contacts_create"] },

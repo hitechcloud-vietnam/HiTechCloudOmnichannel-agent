@@ -1,26 +1,26 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="ChatbotX" width="96" />
+  <img src="assets/logo.svg" alt="HiTechCloudOmnichannel" width="96" />
 </p>
 
-# ChatbotX Agent
+# HiTechCloudOmnichannel Agent
 
-Agent-facing distribution for ChatbotX. This repository publishes two public skills plus the plugin
-manifests that connect AI coding agents to a ChatbotX workspace:
+Agent-facing distribution for HiTechCloudOmnichannel. This repository publishes two public skills plus the plugin
+manifests that connect AI coding agents to a HiTechCloudOmnichannel workspace:
 
-- `skills/chatbotx` — drive the `chatbotx` CLI from an agent's shell. Terminal agents, bulk work,
+- `skills/hitechcloudomnichannel` — drive the `hitechcloudomnichannel` CLI from an agent's shell. Terminal agents, bulk work,
   scripted pipelines.
-- `skills/chatbotx-mcp` — use the ChatbotX MCP server's tools from MCP-capable agents and IDEs.
+- `skills/hitechcloudomnichannel-mcp` — use the HiTechCloudOmnichannel MCP server's tools from MCP-capable agents and IDEs.
 
 IDE/ADE plugins ship **both** skills together with the MCP server: MCP provides the connection,
 the skills teach the agent the workflow (discover → resolve ids → act → verify) and when to fall back
 to the CLI. This mirrors how Stripe, Sentry, Supabase, and Cloudflare distribute their agent plugins.
 
-The ChatbotX product source stays in [`hitechcloud-vietnam/ChatbotX`](https://github.com/hitechcloud-vietnam/ChatbotX).
+The HiTechCloudOmnichannel product source stays in [`hitechcloud-vietnam/HiTechCloudOmnichannel`](https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel).
 This repository intentionally excludes internal development skills.
 
 ## Prerequisites
 
-- A ChatbotX workspace API key (ChatbotX → Settings → Developer → API Keys). Prefer a read-only key
+- A HiTechCloudOmnichannel workspace API key (HiTechCloudOmnichannel → Settings → Developer → API Keys). Prefer a read-only key
   for discovery and analytics tasks.
 - A base API URL only for a self-hosted instance. SaaS defaults to `https://app.hitechcloud.vn/api`.
 - Node.js (the CLI documents Node 24+, the MCP server requires Node 18+).
@@ -43,34 +43,34 @@ This repository intentionally excludes internal development skills.
 npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent
 
 # Or install a specific one
-npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --skill chatbotx
-npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --skill chatbotx-mcp
+npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --skill hitechcloudomnichannel
+npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --skill hitechcloudomnichannel-mcp
 
 # List what this repo publishes
 npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent --list
 ```
 
-Installing the `chatbotx` skill does not install the `chatbotx` binary. The skill tells the agent to
-run `npm install -g chatbotx` on first use if the command is missing.
+Installing the `hitechcloudomnichannel` skill does not install the `hitechcloudomnichannel` binary. The skill tells the agent to
+run `npm install -g hitechcloudomnichannel` on first use if the command is missing.
 
 ### Claude Code
 
 ```bash
 /plugin marketplace add hitechcloud-vietnam/HiTechCloudOmnichannel-agent
-/plugin install chatbotx@HiTechCloudOmnichannel-agent
+/plugin install hitechcloudomnichannel@HiTechCloudOmnichannel-agent
 ```
 
-The plugin loads both skills and starts the ChatbotX MCP server. Claude Code asks only for the API
+The plugin loads both skills and starts the HiTechCloudOmnichannel MCP server. Claude Code asks only for the API
 key when the plugin is enabled (`userConfig`); the key is stored in secure storage. The server uses
 the SaaS URL by default. To use the MCP server without the plugin:
 
 ```bash
-claude mcp add chatbotx \
-  -e CHATBOTX_API_KEY=<your-token> \
-  -e CHATBOTX_API_URL=https://app.hitechcloud.vn/api \
-  -e CHATBOTX_MCP_TRANSPORT=stdio \
+claude mcp add hitechcloudomnichannel \
+  -e HITECHCLOUDOMNICHANNEL_API_KEY=<your-token> \
+  -e HITECHCLOUDOMNICHANNEL_API_URL=https://app.hitechcloud.vn/api \
+  -e HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT=stdio \
   -s user \
-  -- npx -y chatbotx-mcp
+  -- npx -y hitechcloudomnichannel-mcp
 ```
 
 ### Cursor
@@ -80,10 +80,10 @@ This repo ships a Cursor plugin at `.cursor-plugin/` (skills + MCP server + vari
 ```bash
 git clone https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent.git
 mkdir -p ~/.cursor/plugins/local
-ln -s "$(pwd)/HiTechCloudOmnichannel-agent" ~/.cursor/plugins/local/chatbotx
+ln -s "$(pwd)/HiTechCloudOmnichannel-agent" ~/.cursor/plugins/local/hitechcloudomnichannel
 ```
 
-Restart Cursor or run **Developer: Reload Window**, then set `CHATBOTX_API_KEY` in the plugin
+Restart Cursor or run **Developer: Reload Window**, then set `HITECHCLOUDOMNICHANNEL_API_KEY` in the plugin
 configuration UI. For a self-hosted instance, replace the API URL in `.cursor-plugin/mcp.json`.
 
 ### Codex
@@ -95,10 +95,10 @@ npx skills add hitechcloud-vietnam/HiTechCloudOmnichannel-agent   # skills → .
 Then add the MCP server to `~/.codex/config.toml`:
 
 ```toml
-[mcp_servers.chatbotx]
+[mcp_servers.hitechcloudomnichannel]
 command = "npx"
-args = ["-y", "chatbotx-mcp"]
-env = { CHATBOTX_API_KEY = "<your-token>", CHATBOTX_API_URL = "https://app.hitechcloud.vn/api", CHATBOTX_MCP_TRANSPORT = "stdio" }
+args = ["-y", "hitechcloudomnichannel-mcp"]
+env = { HITECHCLOUDOMNICHANNEL_API_KEY = "<your-token>", HITECHCLOUDOMNICHANNEL_API_URL = "https://app.hitechcloud.vn/api", HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT = "stdio" }
 ```
 
 ### Generic MCP clients (Windsurf, Gemini CLI, Copilot, ...)
@@ -108,13 +108,13 @@ repository root holds this block:
 
 ```json
 {
-  "chatbotx": {
+  "hitechcloudomnichannel": {
     "command": "npx",
-    "args": ["-y", "chatbotx-mcp"],
+    "args": ["-y", "hitechcloudomnichannel-mcp"],
     "env": {
-      "CHATBOTX_API_KEY": "<your-workspace-token>",
-      "CHATBOTX_API_URL": "https://app.hitechcloud.vn/api",
-      "CHATBOTX_MCP_TRANSPORT": "stdio"
+      "HITECHCLOUDOMNICHANNEL_API_KEY": "<your-workspace-token>",
+      "HITECHCLOUDOMNICHANNEL_API_URL": "https://app.hitechcloud.vn/api",
+      "HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT": "stdio"
     }
   }
 }
@@ -123,23 +123,23 @@ repository root holds this block:
 ### CLI only
 
 ```bash
-npm install -g chatbotx
-chatbotx config set --apiKey <your-workspace-token> --apiUrl https://app.hitechcloud.vn/api
-chatbotx capabilities list
+npm install -g hitechcloudomnichannel
+hitechcloudomnichannel config set --apiKey <your-workspace-token> --apiUrl https://app.hitechcloud.vn/api
+hitechcloudomnichannel capabilities list
 ```
 
 ## Repository layout
 
 ```
 skills/
-  chatbotx/               CLI skill: SKILL.md, references/commands.md, skill-card.md
-  chatbotx-mcp/           MCP skill: SKILL.md, skill-card.md
+  hitechcloudomnichannel/               CLI skill: SKILL.md, references/commands.md, skill-card.md
+  hitechcloudomnichannel-mcp/           MCP skill: SKILL.md, skill-card.md
 .claude-plugin/           Claude Code plugin + marketplace (skills + mcpServers + userConfig)
 .cursor-plugin/           Cursor plugin + marketplace + mcp.json
 .grok-plugin/             Grok plugin + marketplace + mcp.json
 gemini-extension.json     Gemini CLI extension (MCP server)
 mcp.json                  Generic stdio MCP config
-upstream.json             Pinned chatbotx / chatbotx-mcp npm versions the skills are documented against
+upstream.json             Pinned hitechcloudomnichannel / hitechcloudomnichannel-mcp npm versions the skills are documented against
 scripts/upstream/         Upstream drift check (see "Keeping in sync with upstream" below)
 .github/workflows/        Scheduled drift check (upstream-drift.yml)
 ```
@@ -149,29 +149,29 @@ There is deliberately no `SKILL.md` at the repository root: a root skill would s
 
 ## Keeping in sync with upstream
 
-The `chatbotx` CLI and `chatbotx-mcp` server (both in
-[`hitechcloud-vietnam/ChatbotX`](https://github.com/hitechcloud-vietnam/ChatbotX)) generate their command/tool surface
+The `hitechcloudomnichannel` CLI and `hitechcloudomnichannel-mcp` server (both in
+[`hitechcloud-vietnam/hitechcloudomnichannel`](https://github.com/hitechcloud-vietnam/hitechcloudomnichannel)) generate their command/tool surface
 at runtime from the live `GET {API_URL}/public-spec.json`. That means this repo's docs can drift from
 what an agent actually sees in two independent ways:
 
 1. **The public API changes** — an operation is added, removed, renamed, or its
    `x-mcp.visibility` flips — and the live surface changes immediately, with no npm publish.
-2. **The `chatbotx` / `chatbotx-mcp` packages publish a new version** — global flags, Node version
+2. **The `hitechcloudomnichannel` / `hitechcloudomnichannel-mcp` packages publish a new version** — global flags, Node version
    requirements, or the command-name-collision logic change.
 
 `upstream.json` pins the npm versions the docs in `skills/` are currently written against.
 `.github/workflows/upstream-drift.yml` runs daily (and on demand via `workflow_dispatch`), and:
 
-- collects the *actual* CLI surface by running the published `chatbotx` binary's `--help` recursively
+- collects the *actual* CLI surface by running the published `hitechcloudomnichannel` binary's `--help` recursively
   and reading `duplicate command name` warnings off stderr, and the *actual* MCP default tool set by
   fetching `public-spec.json` directly and filtering `x-mcp.visibility: "default"` operations;
-- compares that live surface against `skills/chatbotx/references/commands.md`, the
-  `## Command-name collisions` section of `skills/chatbotx/SKILL.md`, and the default-tools table in
-  `skills/chatbotx-mcp/SKILL.md`, plus the version pinned in `upstream.json`;
+- compares that live surface against `skills/hitechcloudomnichannel/references/commands.md`, the
+  `## Command-name collisions` section of `skills/hitechcloudomnichannel/SKILL.md`, and the default-tools table in
+  `skills/hitechcloudomnichannel-mcp/SKILL.md`, plus the version pinned in `upstream.json`;
 - opens or updates a single GitHub issue labeled `upstream-drift` describing exactly what changed,
   and closes it automatically once a later run finds the docs match again.
 
-This repo is pull-only with respect to `hitechcloud-vietnam/ChatbotX` — it has no push access there and no
+This repo is pull-only with respect to `hitechcloud-vietnam/hitechcloudomnichannel` — it has no push access there and no
 cross-repo token, so it never edits that repo. A `repository_dispatch` trigger (`upstream-published`)
 is wired up so that repo could push an immediate check instead of waiting for the next scheduled run,
 but nothing there calls it yet.
@@ -201,11 +201,11 @@ No publish step. Push this public repository; `npx skills add hitechcloud-vietna
 ### ClawHub
 
 ```bash
-clawhub skill publish skills/chatbotx --version 1.1.1 --dry-run --json
-clawhub skill publish skills/chatbotx-mcp --version 1.1.1 --dry-run --json
+clawhub skill publish skills/hitechcloudomnichannel --version 1.1.1 --dry-run --json
+clawhub skill publish skills/hitechcloudomnichannel-mcp --version 1.1.1 --dry-run --json
 
-clawhub skill publish skills/chatbotx --version 1.1.1 --changelog "Default SaaS API URL; only prompt for the API key"
-clawhub skill publish skills/chatbotx-mcp --version 1.1.1 --changelog "Default SaaS API URL; only prompt for the API key"
+clawhub skill publish skills/hitechcloudomnichannel --version 1.1.1 --changelog "Default SaaS API URL; only prompt for the API key"
+clawhub skill publish skills/hitechcloudomnichannel-mcp --version 1.1.1 --changelog "Default SaaS API URL; only prompt for the API key"
 ```
 
 ### Cursor Marketplace
@@ -215,15 +215,15 @@ Submit this repository at <https://cursor.com/marketplace/publish>. Cursor reads
 
 ### npm prerequisite
 
-Every manifest starts the server with `npx -y chatbotx-mcp`, so `chatbotx-mcp` must be published to
+Every manifest starts the server with `npx -y hitechcloudomnichannel-mcp`, so `hitechcloudomnichannel-mcp` must be published to
 npm before marketplace submission:
 
 ```bash
-npm view chatbotx-mcp version
+npm view hitechcloudomnichannel-mcp version
 ```
 
 ## Safety
 
-ChatbotX agents can mutate live workspace data and send messages to real contacts. Use
+hitechcloudomnichannel agents can mutate live workspace data and send messages to real contacts. Use
 least-privilege workspace API keys, verify recipient/audience counts before writes, and prefer
 read-only tokens for discovery tasks.

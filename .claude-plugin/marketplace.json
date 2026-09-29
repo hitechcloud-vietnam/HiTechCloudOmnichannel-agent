@@ -5,13 +5,13 @@
     "email": "support@hitechcloud.vn"
   },
   "metadata": {
-    "description": "ChatbotX CLI and MCP skills for agentic workspace automation",
+    "description": "HiTechCloudOmnichannel CLI and MCP skills for agentic workspace automation",
     "version": "1.1.1"
   },
   "plugins": [
     {
-      "name": "chatbotx",
-      "description": "ChatbotX CLI and MCP workflows for contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging.",
+      "name": "HiTechCloudOmnichannel",
+      "description": "HiTechCloudOmnichannel CLI and MCP workflows for contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging.",
       "source": "./"
     }
   ]

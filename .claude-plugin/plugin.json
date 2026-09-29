@@ -1,7 +1,7 @@
 {
-  "name": "chatbotx",
+  "name": "hitechcloudomnichannel",
   "version": "1.1.1",
-  "description": "ChatbotX for AI agents: the chatbotx CLI skill, the ChatbotX MCP server, and the MCP usage skill for contacts, conversations, flows, broadcasts, sequences, and analytics.",
+  "description": "HiTechCloudOmnichannel for AI agents: the hitechcloudomnichannel CLI skill, the hitechcloudomnichannel MCP server, and the MCP usage skill for contacts, conversations, flows, broadcasts, sequences, and analytics.",
   "author": {
     "name": "hitechcloud-vietnam",
     "email": "support@hitechcloud.vn",
@@ -10,24 +10,24 @@
   "homepage": "https://hitechcloud.vn",
   "repository": "https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent",
   "license": "MIT-0",
-  "keywords": ["chatbotx", "mcp", "cli", "automation", "ai-agent"],
-  "skills": ["./skills/chatbotx", "./skills/chatbotx-mcp"],
+  "keywords": ["hitechcloudomnichannel", "mcp", "cli", "automation", "ai-agent"],
+  "skills": ["./skills/hitechcloudomnichannel", "./skills/hitechcloudomnichannel-mcp"],
   "mcpServers": {
-    "chatbotx": {
+    "hitechcloudomnichannel": {
       "command": "npx",
-      "args": ["-y", "chatbotx-mcp"],
+      "args": ["-y", "hitechcloudomnichannel-mcp"],
       "env": {
-        "CHATBOTX_API_KEY": "${user_config.api_key}",
-        "CHATBOTX_API_URL": "https://app.hitechcloud.vn/api",
-        "CHATBOTX_MCP_TRANSPORT": "stdio"
+        "HITECHCLOUDOMNICHANNEL_API_KEY": "${user_config.api_key}",
+        "HITECHCLOUDOMNICHANNEL_API_URL": "https://app.hitechcloud.vn/api",
+        "HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT": "stdio"
       }
     }
   },
   "userConfig": {
     "api_key": {
       "type": "string",
-      "title": "ChatbotX API key",
-      "description": "Workspace API key from ChatbotX Settings → Developer → API Keys.",
+      "title": "HiTechCloudOmnichannel API key",
+      "description": "Workspace API key from HiTechCloudOmnichannel Settings → Developer → API Keys.",
       "sensitive": true,
       "required": true
     }
