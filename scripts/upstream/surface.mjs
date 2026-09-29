@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Collects the *actual* runtime surface of the published `chatbotx` CLI and
-// the live `chatbotx-mcp` default tool set, so check-drift.mjs can compare it
+// Collects the *actual* runtime surface of the published `hitechcloudomnichannel` CLI and
+// the live `hitechcloudomnichannel-mcp` default tool set, so check-drift.mjs can compare it
 // against the hand-written docs in skills/. Ground truth is the published
 // binary + the live OpenAPI spec. The sole normalization exception is
 // `toSnakeCase`, copied verbatim from upstream so operation IDs can be
@@ -18,7 +18,7 @@ const DUPLICATE_COMMAND_RE = /duplicate command name "([^"]+)"/g;
 // starts at the same column on every non-wrapped row. A row whose path OR
 // description overflows the terminal width wraps its tail onto the next
 // line; that continuation line is otherwise indistinguishable from a new
-// command row (same 2-space left margin, no `chatbotx ` prefix either way).
+// command row (same 2-space left margin, no `hitechcloudomnichannel ` prefix either way).
 // The two kinds of continuation are told apart by *where* their text starts:
 //  - a wrapped description tail is printed starting at the description
 //    column (many leading spaces, e.g. "appointment-external-calendars"
@@ -30,7 +30,7 @@ const DUPLICATE_COMMAND_RE = /duplicate command name "([^"]+)"/g;
 // A wrapped positional (e.g. `<fileId>`) uses the same flush-left form and
 // is handled identically: reattached to the path, then stripped like any
 // other positional. A single continuation line can carry a wrapped path tail
-// AND a wrapped description tail at once (e.g. `chatbotx integrations` /
+// AND a wrapped description tail at once (e.g. `hitechcloudomnichannel integrations` /
 // `status-token-errors` splits across two lines while `failed token refresh`
 // runs alongside `status-token-errors` on the second), so a flush-left
 // continuation is itself re-split on its first 2+-space gap the same way the
@@ -39,7 +39,7 @@ const MARGIN_INDENT = 2;
 
 // A description column reading exactly "<name> commands" marks a yargs group
 // or subgroup rather than a leaf action (see registerGroupCommand /
-// registerActionsOnCli in ChatbotX's apps/cli/src/index.ts).
+// registerActionsOnCli in hitechcloudomnichannel's apps/cli/src/index.ts).
 const GROUP_DESC_RE = /^(\S+) commands$/;
 
 /**
@@ -59,7 +59,7 @@ export function parseHelpCommands(helpText) {
   const isContinuation = (line) =>
     line !== undefined &&
     line.trim() !== "" &&
-    !line.startsWith("  chatbotx ");
+    !line.startsWith("  hitechcloudomnichannel ");
 
   const indentOf = (line) => line.length - line.trimStart().length;
 
@@ -68,12 +68,12 @@ export function parseHelpCommands(helpText) {
     if (line.trim() === "" || line.trim() === "Options:") {
       break;
     }
-    if (!line.startsWith("  chatbotx ")) {
+    if (!line.startsWith("  hitechcloudomnichannel ")) {
       // Continuation of the previous row — already consumed when that row
       // was processed below.
       continue;
     }
-    const rest = line.slice("  chatbotx ".length);
+    const rest = line.slice("  hitechcloudomnichannel ".length);
     // Command path is every token up to the first token that looks like a
     // yargs positional (`<...>`) or the start of the description column
     // (two+ spaces). Description columns are aligned, so split on the first
@@ -128,7 +128,7 @@ export function parseHelpCommands(helpText) {
 }
 
 /**
- * Recursively walk `chatbotx <path> --help` for every discovered subgroup,
+ * Recursively walk `hitechcloudomnichannel <path> --help` for every discovered subgroup,
  * collecting the full set of leaf action command paths (e.g.
  * "contacts tags update") and every `duplicate command name` warning seen on
  * stderr along the way.
@@ -200,7 +200,7 @@ export function runNpxHelp({
 }) {
   const args = [
     "-y",
-    `chatbotx@${version}`,
+    `hitechcloudomnichannel@${version}`,
     "--apiKey",
     "upstream-drift-check",
     "--apiUrl",
@@ -216,7 +216,7 @@ export function runNpxHelp({
   if (result.status !== 0) {
     const detail = result.error?.message ?? `exit ${result.status ?? "unknown"}`;
     throw new Error(
-      `npx chatbotx@${version} ${pathTokens.join(" ")} --help failed (${detail}).\n` +
+      `npx hitechcloudomnichannel@${version} ${pathTokens.join(" ")} --help failed (${detail}).\n` +
         `stdout:\n${result.stdout ?? ""}\n` +
         `stderr:\n${result.stderr ?? ""}`,
     );
@@ -229,7 +229,7 @@ export function runNpxHelp({
 const HTTP_METHODS = new Set(["get", "post", "put", "patch", "delete"]);
 
 /**
- * Verbatim copy of ChatbotX's apps/mcp-server/src/openapi-loader.ts
+ * Verbatim copy of hitechcloudomnichannel's apps/mcp-server/src/openapi-loader.ts
  * `toSnakeCase` — MCP tool names are `toSnakeCase(operationId)`. Kept here
  * only to reproduce the *documented* tool name from the live spec's
  * `operationId`, not as a reimplementation of loader logic.
@@ -336,10 +336,10 @@ export async function main(
   const apiUrl = opts.apiUrl ?? "https://app.hitechcloud.vn/api";
   const specUrl = opts.specUrl ?? `${apiUrl}/public-spec.json`;
 
-  const cliVersion = opts.cliVersion ?? resolveNpmVersionImpl("chatbotx");
-  const mcpVersion = opts.mcpVersion ?? resolveNpmVersionImpl("chatbotx-mcp");
+  const cliVersion = opts.cliVersion ?? resolveNpmVersionImpl("hitechcloudomnichannel");
+  const mcpVersion = opts.mcpVersion ?? resolveNpmVersionImpl("hitechcloudomnichannel-mcp");
 
-  const tmpHome = mkdtempSync(join(tmpdir(), "chatbotx-drift-home-"));
+  const tmpHome = mkdtempSync(join(tmpdir(), "hitechcloudomnichannel-drift-home-"));
   try {
     const runHelp = (pathTokens) =>
       runNpxHelp({ version: cliVersion, apiUrl, tmpHome, pathTokens });

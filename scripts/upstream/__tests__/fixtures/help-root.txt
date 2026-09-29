@@ -1,68 +1,68 @@
-chatbotx <group> <action> [options]
+hitechcloudomnichannel <group> <action> [options]
 
 Commands:
-  chatbotx config                          Configuration commands
-  chatbotx ads                             ads commands
-  chatbotx ai-agents                       ai-agents commands
-  chatbotx ai-files                        ai-files commands
-  chatbotx ai-functions                    ai-functions commands
-  chatbotx ai-mcp-servers                  ai-mcp-servers commands
-  chatbotx analytics                       analytics commands
-  chatbotx appointment-calendars           appointment-calendars commands
-  chatbotx appointment-external-calendars  appointment-external-calendars
+  hitechcloudomnichannel config                          Configuration commands
+  hitechcloudomnichannel ads                             ads commands
+  hitechcloudomnichannel ai-agents                       ai-agents commands
+  hitechcloudomnichannel ai-files                        ai-files commands
+  hitechcloudomnichannel ai-functions                    ai-functions commands
+  hitechcloudomnichannel ai-mcp-servers                  ai-mcp-servers commands
+  hitechcloudomnichannel analytics                       analytics commands
+  hitechcloudomnichannel appointment-calendars           appointment-calendars commands
+  hitechcloudomnichannel appointment-external-calendars  appointment-external-calendars
                                            commands
-  chatbotx appointment-reminders           appointment-reminders commands
-  chatbotx appointments                    appointments commands
-  chatbotx bot-fields                      bot-fields commands
-  chatbotx broadcasts                      broadcasts commands
-  chatbotx capabilities                    capabilities commands
-  chatbotx contact-scans                   contact-scans commands
-  chatbotx contacts                        contacts commands
-  chatbotx conversations                   conversations commands
-  chatbotx coupon-topics                   coupon-topics commands
-  chatbotx coupons                         coupons commands
-  chatbotx custom-fields                   custom-fields commands
-  chatbotx dynamic-images                  dynamic-images commands
-  chatbotx email-topics                    email-topics commands
-  chatbotx error-logs                      error-logs commands
-  chatbotx external-webhooks               external-webhooks commands
-  chatbotx facebook-lead-ads               facebook-lead-ads commands
-  chatbotx fb-comments                     fb-comments commands
-  chatbotx flows                           flows commands
-  chatbotx folders                         folders commands
-  chatbotx ig-comments                     ig-comments commands
-  chatbotx ig-stories                      ig-stories commands
-  chatbotx teams                           teams commands
-  chatbotx inboxes                         inboxes commands
-  chatbotx integrations                    integrations commands
-  chatbotx keywords                        keywords commands
-  chatbotx media-library                   media-library commands
-  chatbotx messenger-channels              messenger-channels commands
-  chatbotx messenger-personas              messenger-personas commands
-  chatbotx minigames                       minigames commands
-  chatbotx product-categories              product-categories commands
-  chatbotx products                        products commands
-  chatbotx qr-codes                        qr-codes commands
-  chatbotx questionnaires                  questionnaires commands
-  chatbotx ref-links                       ref-links commands
-  chatbotx saved-replies                   saved-replies commands
-  chatbotx schemas                         schemas commands
-  chatbotx sequences                       sequences commands
-  chatbotx smtp-integrations               smtp-integrations commands
-  chatbotx spreadsheets                    spreadsheets commands
-  chatbotx tags                            tags commands
-  chatbotx token                           token commands
-  chatbotx triggers                        triggers commands
-  chatbotx user-persistent-menus           user-persistent-menus commands
-  chatbotx webchats                        webchats commands
-  chatbotx webhooks                        webhooks commands
-  chatbotx whatsapp                        whatsapp commands
-  chatbotx members                         members commands
-  chatbotx zalo-channels                   zalo-channels commands
+  hitechcloudomnichannel appointment-reminders           appointment-reminders commands
+  hitechcloudomnichannel appointments                    appointments commands
+  hitechcloudomnichannel bot-fields                      bot-fields commands
+  hitechcloudomnichannel broadcasts                      broadcasts commands
+  hitechcloudomnichannel capabilities                    capabilities commands
+  hitechcloudomnichannel contact-scans                   contact-scans commands
+  hitechcloudomnichannel contacts                        contacts commands
+  hitechcloudomnichannel conversations                   conversations commands
+  hitechcloudomnichannel coupon-topics                   coupon-topics commands
+  hitechcloudomnichannel coupons                         coupons commands
+  hitechcloudomnichannel custom-fields                   custom-fields commands
+  hitechcloudomnichannel dynamic-images                  dynamic-images commands
+  hitechcloudomnichannel email-topics                    email-topics commands
+  hitechcloudomnichannel error-logs                      error-logs commands
+  hitechcloudomnichannel external-webhooks               external-webhooks commands
+  hitechcloudomnichannel facebook-lead-ads               facebook-lead-ads commands
+  hitechcloudomnichannel fb-comments                     fb-comments commands
+  hitechcloudomnichannel flows                           flows commands
+  hitechcloudomnichannel folders                         folders commands
+  hitechcloudomnichannel ig-comments                     ig-comments commands
+  hitechcloudomnichannel ig-stories                      ig-stories commands
+  hitechcloudomnichannel teams                           teams commands
+  hitechcloudomnichannel inboxes                         inboxes commands
+  hitechcloudomnichannel integrations                    integrations commands
+  hitechcloudomnichannel keywords                        keywords commands
+  hitechcloudomnichannel media-library                   media-library commands
+  hitechcloudomnichannel messenger-channels              messenger-channels commands
+  hitechcloudomnichannel messenger-personas              messenger-personas commands
+  hitechcloudomnichannel minigames                       minigames commands
+  hitechcloudomnichannel product-categories              product-categories commands
+  hitechcloudomnichannel products                        products commands
+  hitechcloudomnichannel qr-codes                        qr-codes commands
+  hitechcloudomnichannel questionnaires                  questionnaires commands
+  hitechcloudomnichannel ref-links                       ref-links commands
+  hitechcloudomnichannel saved-replies                   saved-replies commands
+  hitechcloudomnichannel schemas                         schemas commands
+  hitechcloudomnichannel sequences                       sequences commands
+  hitechcloudomnichannel smtp-integrations               smtp-integrations commands
+  hitechcloudomnichannel spreadsheets                    spreadsheets commands
+  hitechcloudomnichannel tags                            tags commands
+  hitechcloudomnichannel token                           token commands
+  hitechcloudomnichannel triggers                        triggers commands
+  hitechcloudomnichannel user-persistent-menus           user-persistent-menus commands
+  hitechcloudomnichannel webchats                        webchats commands
+  hitechcloudomnichannel webhooks                        webhooks commands
+  hitechcloudomnichannel whatsapp                        whatsapp commands
+  hitechcloudomnichannel members                         members commands
+  hitechcloudomnichannel zalo-channels                   zalo-channels commands
 
 Options:
-      --apiKey               ChatbotX API key (global)                  [string]
-      --apiUrl               ChatbotX API URL (global)                  [string]
+      --apiKey               HiTechCloudOmnichannel API key (global)                  [string]
+      --apiUrl               HiTechCloudOmnichannel API URL (global)                  [string]
       --allowSelfSignedCert  Disable TLS cert validation (local dev only)
                                                                        [boolean]
       --refresh-spec         Force refresh the cached OpenAPI spec

@@ -1,49 +1,49 @@
 ---
-name: chatbotx-mcp
-description: Use ChatbotX MCP tools to operate contacts, conversations, flows, broadcasts, sequences, analytics, and workspace automation from agentic IDEs.
+name: hitechcloudomnichannel-mcp
+description: Use HiTechCloudOmnichannel MCP tools to operate contacts, conversations, flows, broadcasts, sequences, analytics, and workspace automation from agentic IDEs.
 version: 1.1.1
-homepage: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/tree/main/skills/chatbotx-mcp
+homepage: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/tree/main/skills/hitechcloudomnichannel-mcp
 emoji: "🔌"
 metadata:
   openclaw:
-    primaryEnv: CHATBOTX_API_KEY
+    primaryEnv: HITECHCLOUDOMNICHANNEL_API_KEY
     envVars:
-      - name: CHATBOTX_API_KEY
+      - name: HITECHCLOUDOMNICHANNEL_API_KEY
         required: true
-        description: ChatbotX workspace API key (ChatbotX Settings → Developer → API Keys).
-      - name: CHATBOTX_API_URL
+        description: HiTechCloudOmnichannel workspace API key (HiTechCloudOmnichannel Settings → Developer → API Keys).
+      - name: HITECHCLOUDOMNICHANNEL_API_URL
         required: true
-        description: Base API URL of the ChatbotX instance, e.g. https://app.hitechcloud.vn/api.
-      - name: CHATBOTX_ALLOW_SELF_SIGNED_CERT
+        description: Base API URL of the HiTechCloudOmnichannel instance, e.g. https://app.hitechcloud.vn/api.
+      - name: HITECHCLOUDOMNICHANNEL_ALLOW_SELF_SIGNED_CERT
         required: false
         description: Set to "true" only for trusted local/self-hosted instances with self-signed TLS.
     install:
       - kind: node
-        package: chatbotx-mcp
-        bins: [chatbotx-mcp]
+        package: hitechcloudomnichannel-mcp
+        bins: [hitechcloudomnichannel-mcp]
 ---
 
-# ChatbotX MCP
+# HiTechCloudOmnichannel MCP
 
-Use the official ChatbotX MCP server to give AI agents tool access to a ChatbotX workspace.
+Use the official HiTechCloudOmnichannel MCP server to give AI agents tool access to a HiTechCloudOmnichannel workspace.
 Tools are generated from the connected workspace's OpenAPI spec and filtered by the workspace
 token's scopes.
 
 ## Setup
 
-Requires Node.js 18 or newer and a ChatbotX workspace token from Settings → Developer → API Keys.
+Requires Node.js 18 or newer and a HiTechCloudOmnichannel workspace token from Settings → Developer → API Keys.
 
 For MCP clients that support stdio servers:
 
 ```json
 {
-  "chatbotx": {
+  "hitechcloudomnichannel": {
     "command": "npx",
-    "args": ["-y", "chatbotx-mcp"],
+    "args": ["-y", "hitechcloudomnichannel-mcp"],
     "env": {
-      "CHATBOTX_API_KEY": "your_workspace_token",
-      "CHATBOTX_API_URL": "https://app.hitechcloud.vn/api",
-      "CHATBOTX_MCP_TRANSPORT": "stdio"
+      "HITECHCLOUDOMNICHANNEL_API_KEY": "your_workspace_token",
+      "HITECHCLOUDOMNICHANNEL_API_URL": "https://app.hitechcloud.vn/api",
+      "HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT": "stdio"
     }
   }
 }
@@ -52,23 +52,23 @@ For MCP clients that support stdio servers:
 For Claude Code:
 
 ```bash
-claude mcp add chatbotx \
-  -e CHATBOTX_API_KEY=<your-token> \
-  -e CHATBOTX_API_URL=https://app.hitechcloud.vn/api \
-  -e CHATBOTX_MCP_TRANSPORT=stdio \
+claude mcp add hitechcloudomnichannel \
+  -e HITECHCLOUDOMNICHANNEL_API_KEY=<your-token> \
+  -e HITECHCLOUDOMNICHANNEL_API_URL=https://app.hitechcloud.vn/api \
+  -e HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT=stdio \
   -s user \
-  -- npx -y chatbotx-mcp
+  -- npx -y hitechcloudomnichannel-mcp
 ```
 
 For a self-hosted or local instance with a trusted self-signed certificate:
 
 ```bash
-export CHATBOTX_ALLOW_SELF_SIGNED_CERT=true
+export HITECHCLOUDOMNICHANNEL_ALLOW_SELF_SIGNED_CERT=true
 ```
 
 ## Workflow
 
-1. Set `CHATBOTX_API_KEY` and `CHATBOTX_API_URL`.
+1. Set `HITECHCLOUDOMNICHANNEL_API_KEY` and `HITECHCLOUDOMNICHANNEL_API_URL`.
 2. Call `capabilities_get` to resolve inboxes, templates, fields, tags, flows, and sequences.
 3. Call `token_get` before any write to check the token's permission and scopes.
 4. Resolve ids. Most writes take ids, not display names.
@@ -142,9 +142,9 @@ management, integrations, workspace members, and other less common operations.
 
 - Missing tools: call `token_get` to check scopes and permission, then refresh the MCP client so
   `tools/list` runs again.
-- New API not visible: the server refreshes the OpenAPI spec after `CHATBOTX_SPEC_TTL_MS` (default
+- New API not visible: the server refreshes the OpenAPI spec after `HITECHCLOUDOMNICHANNEL_SPEC_TTL_MS` (default
   5 minutes). Restart the MCP server to force a clean load.
-- Auth errors: verify `CHATBOTX_API_KEY` and make sure `CHATBOTX_API_URL` includes the `/api` path
+- Auth errors: verify `HITECHCLOUDOMNICHANNEL_API_KEY` and make sure `HITECHCLOUDOMNICHANNEL_API_URL` includes the `/api` path
   prefix.
-- Local TLS errors: set `CHATBOTX_ALLOW_SELF_SIGNED_CERT=true`, only for trusted local or
+- Local TLS errors: set `HITECHCLOUDOMNICHANNEL_ALLOW_SELF_SIGNED_CERT=true`, only for trusted local or
   self-hosted instances.

@@ -2,39 +2,39 @@
 
 ## Description
 
-ChatbotX CLI wraps the ChatbotX workspace REST API into command-line verbs — contacts,
+HiTechCloudOmnichannel CLI wraps the HiTechCloudOmnichannel workspace REST API into command-line verbs — contacts,
 conversations, broadcasts, flows, sequences, appointments, minigames, analytics, and every other
-workspace resource — so a terminal or an AI agent can operate a ChatbotX workspace directly.
+workspace resource — so a terminal or an AI agent can operate a HiTechCloudOmnichannel workspace directly.
 
 This skill is ready for commercial/non-commercial use.
 
 ## Owner
 
-hitechcloud-vietnam — ChatbotX agent distribution maintainers (github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent).
+hitechcloud-vietnam — HiTechCloudOmnichannel agent distribution maintainers (github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent).
 
 ## License/Terms of Use
 
 This skill package (SKILL.md, skill-card.md, and this folder) is published to ClawHub under
-MIT-0, per ClawHub's publishing policy. The underlying `chatbotx` npm CLI and the ChatbotX
+MIT-0, per ClawHub's publishing policy. The underlying `hitechcloudomnichannel` npm CLI and the HiTechCloudOmnichannel
 platform it talks to are licensed separately — see `LICENSE` at the repository root
 (AhaChat LLC, with third-party and enterprise-directory exceptions listed there). Using this
-skill still requires a ChatbotX workspace and API key subject to ChatbotX's own terms of service.
+skill still requires a HiTechCloudOmnichannel workspace and API key subject to HiTechCloudOmnichannel's own terms of service.
 
 ## Use Case
 
-External developers and AI agents that already hold a ChatbotX workspace API key, automating
+External developers and AI agents that already hold a HiTechCloudOmnichannel workspace API key, automating
 contact management, conversation handling, broadcast scheduling, flow/sequence publishing, and
 analytics retrieval against that workspace from a CLI or agent runtime.
 
 ## Deployment Geography for Use
 
-Global — the CLI talks to whatever `--apiUrl` / `CHATBOTX_API_URL` is configured (ChatbotX SaaS
+Global — the CLI talks to whatever `--apiUrl` / `HITECHCLOUDOMNICHANNEL_API_URL` is configured (HiTechCloudOmnichannel SaaS
 or a self-hosted instance); it has no built-in geographic restriction.
 
 ### Requirements / Dependencies
 
 Requires API Key or External Credential: Yes
-Credential Type(s): API key (ChatbotX workspace API key, `CHATBOTX_API_KEY` / `chatbotx config set --apiKey`)
+Credential Type(s): API key (HiTechCloudOmnichannel workspace API key, `HITECHCLOUDOMNICHANNEL_API_KEY` / `hitechcloudomnichannel config set --apiKey`)
 
 Do not include secrets in prompts/logs/output; use a least-privilege workspace API key; rotate keys
 as appropriate.
@@ -57,15 +57,15 @@ Mitigation: Resolve and review exact target ids/filters with the matching `list`
 before running a bulk or delete command; consult the "Command-name collisions" section of
 this skill's `SKILL.md` before relying on a delete-by-id or update-by-id variant.
 
-Risk: Credentials are stored in plaintext at `~/.chatbotX/config.json` (or shell environment
+Risk: Credentials are stored in plaintext at `~/.hitechcloudomnichannel/config.json` (or shell environment
 variables) and sent with every request to the configured API URL.
-Mitigation: Treat `~/.chatbotX/config.json` as a secret file; use a scoped API key; only pass
+Mitigation: Treat `~/.hitechcloudomnichannel/config.json` as a secret file; use a scoped API key; only pass
 `--allowSelfSignedCert` against a trusted local/dev instance, never a production endpoint.
 
 Risk: Generated commands come from the workspace's live OpenAPI spec (cached for 1 hour at
-`~/.chatbotX/openapi-cache.json`); a stale cache can make a recently added/changed API invisible or
+`~/.hitechcloudomnichannel/openapi-cache.json`); a stale cache can make a recently added/changed API invisible or
 mis-shaped to the CLI.
-Mitigation: Pass `--refresh-spec` (or set `CHATBOTX_SPEC_CACHE_TTL_SECONDS`) after a known API
+Mitigation: Pass `--refresh-spec` (or set `HITECHCLOUDOMNICHANNEL_SPEC_CACHE_TTL_SECONDS`) after a known API
 change, and confirm a write with a follow-up `get`/`list` rather than trusting the command's own
 exit code alone.
 
@@ -74,13 +74,13 @@ exit code alone.
 - This skill's `SKILL.md` — agent rules, workflow, and command-name collision table.
 - This skill's `references/commands.md` — full command catalog grouped by resource.
 - `apps/cli/README.md` in the source repository — hand-maintained, more detailed CLI reference.
-- Source repository: https://github.com/hitechcloud-vietnam/ChatbotX/tree/main/apps/cli
+- Source repository: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel/tree/main/apps/cli
 
 ## Skill Output
 
 Output type(s): API calls, structured data, shell command guidance
 
-Output format: JSON for every `chatbotx` command result (`--pretty` for indented output); Markdown
+Output format: JSON for every `hitechcloudomnichannel` command result (`--pretty` for indented output); Markdown
 for this skill's own instructions. Errors are always `{"error": true, "message": "...", "status": <httpCode>}`.
 
 Output parameters: 1D — each command returns a flat JSON object or array from one API response; no

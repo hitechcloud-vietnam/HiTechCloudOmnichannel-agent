@@ -1,15 +1,15 @@
-chatbotx contacts tags
+hitechcloudomnichannel contacts tags
 
 tags commands
 
 Commands:
-  chatbotx contacts tags list <identifier>  Get all tags added to contact
-  chatbotx contacts tags update             Replace all tags on contact
+  hitechcloudomnichannel contacts tags list <identifier>  Get all tags added to contact
+  hitechcloudomnichannel contacts tags update             Replace all tags on contact
   <identifier>
 
 Options:
-      --apiKey               ChatbotX API key (global)                  [string]
-      --apiUrl               ChatbotX API URL (global)                  [string]
+      --apiKey               HiTechCloudOmnichannel API key (global)                  [string]
+      --apiUrl               HiTechCloudOmnichannel API URL (global)                  [string]
       --allowSelfSignedCert  Disable TLS cert validation (local dev only)
                                                                        [boolean]
       --refresh-spec         Force refresh the cached OpenAPI spec

@@ -1,18 +1,18 @@
-chatbotx integrations
+hitechcloudomnichannel integrations
 
 integrations commands
 
 Commands:
-  chatbotx integrations list                List integrations
-  chatbotx integrations get <id>            Get integration
-  chatbotx integrations                     List channel integrations with
+  hitechcloudomnichannel integrations list                List integrations
+  hitechcloudomnichannel integrations get <id>            Get integration
+  hitechcloudomnichannel integrations                     List channel integrations with
   status-token-errors                       failed token refresh
-  chatbotx integrations find-by-ai          Get AI provider integration
+  hitechcloudomnichannel integrations find-by-ai          Get AI provider integration
   <provider>
 
 Options:
-      --apiKey               ChatbotX API key (global)                  [string]
-      --apiUrl               ChatbotX API URL (global)                  [string]
+      --apiKey               HiTechCloudOmnichannel API key (global)                  [string]
+      --apiUrl               HiTechCloudOmnichannel API URL (global)                  [string]
       --allowSelfSignedCert  Disable TLS cert validation (local dev only)
                                                                        [boolean]
       --refresh-spec         Force refresh the cached OpenAPI spec

@@ -1,23 +1,23 @@
-chatbotx appointment-calendars
+hitechcloudomnichannel appointment-calendars
 
 appointment-calendars commands
 
 Commands:
-  chatbotx appointment-calendars list       List appointment calendars
-  chatbotx appointment-calendars create     Create appointment calendar
-  chatbotx appointment-calendars get <id>   Get appointment calendar
-  chatbotx appointment-calendars update     Update appointment calendar
+  hitechcloudomnichannel appointment-calendars list       List appointment calendars
+  hitechcloudomnichannel appointment-calendars create     Create appointment calendar
+  hitechcloudomnichannel appointment-calendars get <id>   Get appointment calendar
+  hitechcloudomnichannel appointment-calendars update     Update appointment calendar
   <id>
-  chatbotx appointment-calendars delete     Delete appointment calendar
+  hitechcloudomnichannel appointment-calendars delete     Delete appointment calendar
   <id>
-  chatbotx appointment-calendars active     active commands
-  chatbotx appointment-calendars duplicate  duplicate commands
-  chatbotx appointment-calendars            availability commands
+  hitechcloudomnichannel appointment-calendars active     active commands
+  hitechcloudomnichannel appointment-calendars duplicate  duplicate commands
+  hitechcloudomnichannel appointment-calendars            availability commands
   availability
 
 Options:
-      --apiKey               ChatbotX API key (global)                  [string]
-      --apiUrl               ChatbotX API URL (global)                  [string]
+      --apiKey               HiTechCloudOmnichannel API key (global)                  [string]
+      --apiUrl               HiTechCloudOmnichannel API URL (global)                  [string]
       --allowSelfSignedCert  Disable TLS cert validation (local dev only)
                                                                        [boolean]
       --refresh-spec         Force refresh the cached OpenAPI spec

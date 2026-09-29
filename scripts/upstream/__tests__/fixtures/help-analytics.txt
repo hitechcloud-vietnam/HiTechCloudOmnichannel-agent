@@ -1,54 +1,54 @@
-chatbotx analytics
+hitechcloudomnichannel analytics
 
 analytics commands
 
 Commands:
-  chatbotx analytics                        Get contact counts per day
+  hitechcloudomnichannel analytics                        Get contact counts per day
   contact-counts-per-day
-  chatbotx analytics                        Get new contact counts per day
+  hitechcloudomnichannel analytics                        Get new contact counts per day
   new-contact-counts-per-day
-  chatbotx analytics                        Get blocked contacts per day
+  hitechcloudomnichannel analytics                        Get blocked contacts per day
   blocked-contacts-per-day
-  chatbotx analytics                        Get blocked contacts count
+  hitechcloudomnichannel analytics                        Get blocked contacts count
   blocked-contacts-count
-  chatbotx analytics new-contacts-count     Get new contacts count
-  chatbotx analytics contacts-count         Get contacts count
-  chatbotx analytics active-contacts-count  Get active contacts count
-  chatbotx analytics contacts-by-dimension  Get contacts by dimension
-  chatbotx analytics messages-by-admin      Get messages sent by admin
-  chatbotx analytics human-agent-stats      Get human agent statistics
-  chatbotx analytics conversation-handoffs  Get conversation handoffs
-  chatbotx analytics                        Get conversation follow-ups
+  hitechcloudomnichannel analytics new-contacts-count     Get new contacts count
+  hitechcloudomnichannel analytics contacts-count         Get contacts count
+  hitechcloudomnichannel analytics active-contacts-count  Get active contacts count
+  hitechcloudomnichannel analytics contacts-by-dimension  Get contacts by dimension
+  hitechcloudomnichannel analytics messages-by-admin      Get messages sent by admin
+  hitechcloudomnichannel analytics human-agent-stats      Get human agent statistics
+  hitechcloudomnichannel analytics conversation-handoffs  Get conversation handoffs
+  hitechcloudomnichannel analytics                        Get conversation follow-ups
   conversation-followups
-  chatbotx analytics conversation-archived  Get archived conversations
-  chatbotx analytics conversation-assigned  Get assigned conversations
-  chatbotx analytics                        Get assigned conversations by admin
+  hitechcloudomnichannel analytics conversation-archived  Get archived conversations
+  hitechcloudomnichannel analytics conversation-assigned  Get assigned conversations
+  hitechcloudomnichannel analytics                        Get assigned conversations by admin
   conversation-assigned-by-admin
-  chatbotx analytics                        Get unique conversations by admin
+  hitechcloudomnichannel analytics                        Get unique conversations by admin
   unique-conversations-by-admin
-  chatbotx analytics                        Get bot messages by result
+  hitechcloudomnichannel analytics                        Get bot messages by result
   bot-messages-by-result
-  chatbotx analytics                        Get bot messages with response
+  hitechcloudomnichannel analytics                        Get bot messages with response
   bot-messages-with-response
-  chatbotx analytics                        Get bot messages with no response
+  hitechcloudomnichannel analytics                        Get bot messages with no response
   bot-messages-no-response
-  chatbotx analytics                        Get bot messages AI providers
+  hitechcloudomnichannel analytics                        Get bot messages AI providers
   bot-messages-ai-providers
-  chatbotx analytics messages-by-sender     Get messages by sender
-  chatbotx analytics broadcasts-stats       Get broadcast stats
+  hitechcloudomnichannel analytics messages-by-sender     Get messages by sender
+  hitechcloudomnichannel analytics broadcasts-stats       Get broadcast stats
   <broadcastId>
-  chatbotx analytics sequences-steps-stats  Get sequence step stats
+  hitechcloudomnichannel analytics sequences-steps-stats  Get sequence step stats
   <sequenceId> <stepId>
-  chatbotx analytics mac-active-count       Get current period MAC count
-  chatbotx analytics flows-stats <flowId>   Get flow analytics
-  chatbotx analytics magic-links-stats      Get magic link stats
-  chatbotx analytics magic-links-contacts   Get magic link contacts
-  chatbotx analytics ref-links-stats        Get ref link stats
-  chatbotx analytics ref-links-contacts     Get ref link contacts
+  hitechcloudomnichannel analytics mac-active-count       Get current period MAC count
+  hitechcloudomnichannel analytics flows-stats <flowId>   Get flow analytics
+  hitechcloudomnichannel analytics magic-links-stats      Get magic link stats
+  hitechcloudomnichannel analytics magic-links-contacts   Get magic link contacts
+  hitechcloudomnichannel analytics ref-links-stats        Get ref link stats
+  hitechcloudomnichannel analytics ref-links-contacts     Get ref link contacts
 
 Options:
-      --apiKey               ChatbotX API key (global)                  [string]
-      --apiUrl               ChatbotX API URL (global)                  [string]
+      --apiKey               HiTechCloudOmnichannel API key (global)                  [string]
+      --apiUrl               HiTechCloudOmnichannel API URL (global)                  [string]
       --allowSelfSignedCert  Disable TLS cert validation (local dev only)
                                                                        [boolean]
       --refresh-spec         Force refresh the cached OpenAPI spec

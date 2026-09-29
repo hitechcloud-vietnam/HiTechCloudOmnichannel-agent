@@ -1,50 +1,50 @@
 ---
-name: chatbotx
-description: Manage contacts, conversations, broadcasts, flows, sequences, appointments, minigames, and every other ChatbotX workspace resource from the command line.
-allowed-tools: Bash(chatbotx:*)
+name: hitechcloudomnichannel
+description: Manage contacts, conversations, broadcasts, flows, sequences, appointments, minigames, and every other hitechcloudomnichannel workspace resource from the command line.
+allowed-tools: Bash(hitechcloudomnichannel:*)
 version: 1.1.1
-homepage: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/tree/main/skills/chatbotx
+homepage: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/tree/main/skills/hitechcloudomnichannel
 emoji: "🤖"
 metadata:
   openclaw:
     requires:
       bins:
-        - chatbotx
+        - hitechcloudomnichannel
     os:
       - macos
       - linux
       - windows
-    primaryEnv: CHATBOTX_API_KEY
+    primaryEnv: HITECHCLOUDOMNICHANNEL_API_KEY
     envVars:
-      - name: CHATBOTX_API_KEY
+      - name: HITECHCLOUDOMNICHANNEL_API_KEY
         required: true
-        description: ChatbotX workspace API key (ChatbotX Settings → Developer → API Keys).
-      - name: CHATBOTX_API_URL
+        description: HiTechCloudOmnichannel workspace API key (HiTechCloudOmnichannel Settings → Developer → API Keys).
+      - name: HITECHCLOUDOMNICHANNEL_API_URL
         required: true
-        description: Base API URL of the ChatbotX instance, e.g. https://app.hitechcloud.vn/api.
-      - name: CHATBOTX_ALLOW_SELF_SIGNED_CERT
+        description: Base API URL of the HiTechCloudOmnichannel instance, e.g. https://app.hitechcloud.vn/api.
+      - name: HITECHCLOUDOMNICHANNEL_ALLOW_SELF_SIGNED_CERT
         required: false
         description: Set to "true" to skip TLS certificate validation, e.g. for a local/self-signed instance.
     install:
       - kind: node
-        package: chatbotx
-        bins: [chatbotx]
+        package: hitechcloudomnichannel
+        bins: [hitechcloudomnichannel]
 ---
 
-# ChatbotX
+# hitechcloudomnichannel
 
-Use the `chatbotx` CLI to manage a ChatbotX workspace: contacts, conversations, broadcasts, flows,
+Use the `hitechcloudomnichannel` CLI to manage a HiTechCloudOmnichannel workspace: contacts, conversations, broadcasts, flows,
 sequences, appointments, minigames, analytics, and the rest of the workspace API. Commands are
 generated at runtime from the connected workspace's OpenAPI spec, so `--help` on the live CLI is
 the authoritative reference and this document can lag behind it.
 
 ## Rules for agents
 
-1. Confirm credentials and workspace scope before anything else. Run `chatbotx token list`. A `401`
-   means the user must set `CHATBOTX_API_KEY` and `CHATBOTX_API_URL`, or run
-   `chatbotx config set --apiKey <key> --apiUrl <url>`. Do not run any other command until this
+1. Confirm credentials and workspace scope before anything else. Run `hitechcloudomnichannel token list`. A `401`
+   means the user must set `HITECHCLOUDOMNICHANNEL_API_KEY` and `HITECHCLOUDOMNICHANNEL_API_URL`, or run
+   `hitechcloudomnichannel config set --apiKey <key> --apiUrl <url>`. Do not run any other command until this
    returns a workspace, permission, and scope payload.
-2. Discover before mutating. Run `chatbotx capabilities list` and the relevant `list` or `get`
+2. Discover before mutating. Run `hitechcloudomnichannel capabilities list` and the relevant `list` or `get`
    command to resolve names, ids, permissions, and current state before any write. Run
    `<command> --help` when the exact flags are unknown.
 3. Messages, broadcasts, bulk operations, deletes, and flow publishing reach real customers.
@@ -54,30 +54,30 @@ the authoritative reference and this document can lag behind it.
 4. Verify every write with the matching `get` or `list` command. An exit code of `0` is not proof:
    a command affected by a name collision (see below) can do nothing and still exit `0`.
 5. Never expose API keys, saved config, or unredacted contact data in responses.
-   `~/.chatbotX/config.json` holds plaintext credentials. Treat it as a secret file.
+   `~/.hitechcloudomnichannel/config.json` holds plaintext credentials. Treat it as a secret file.
 
 ## Setup
 
-Requires Node.js 24 or newer. Documented against `chatbotx` 1.8 or newer.
+Requires Node.js 24 or newer. Documented against `hitechcloudomnichannel` 1.8 or newer.
 
 ```bash
-npm install -g chatbotx
+npm install -g hitechcloudomnichannel
 
 # Save credentials once
-chatbotx config set --apiKey <yourApiKey> --apiUrl <yourApiUrl>
+hitechcloudomnichannel config set --apiKey <yourApiKey> --apiUrl <yourApiUrl>
 # --apiUrl example: https://app.hitechcloud.vn/api
 
 # Or via environment variables (no config file written)
-export CHATBOTX_API_KEY="your_api_key"
-export CHATBOTX_API_URL="https://app.hitechcloud.vn/api"
+export HITECHCLOUDOMNICHANNEL_API_KEY="your_api_key"
+export HITECHCLOUDOMNICHANNEL_API_URL="https://app.hitechcloud.vn/api"
 
 # Local dev / self-signed cert
-chatbotx config set --allowSelfSignedCert true
+hitechcloudomnichannel config set --allowSelfSignedCert true
 ```
 
 Global options work on every command. `--apiKey`, `--apiUrl`, and `--allowSelfSignedCert` each
 override the saved config for one run. `--refresh-spec` re-fetches the OpenAPI spec and clears the
-1-hour cache at `~/.chatbotX/openapi-cache.json`. Use it, or set `CHATBOTX_SPEC_CACHE_TTL_SECONDS`,
+1-hour cache at `~/.hitechcloudomnichannel/openapi-cache.json`. Use it, or set `HITECHCLOUDOMNICHANNEL_SPEC_CACHE_TTL_SECONDS`,
 when a command is missing after a workspace API upgrade.
 
 ## Output and errors
@@ -205,6 +205,6 @@ workspace REST API directly instead of trying other flag combinations.
 
 ## MCP alternative
 
-Agents in MCP-capable IDEs can use the `chatbotx-mcp` server instead of the CLI. It exposes the
+Agents in MCP-capable IDEs can use the `hitechcloudomnichannel-mcp` server instead of the CLI. It exposes the
 same workspace API as MCP tools, filtered by the token's scopes. Setup and the default tool list
-are in `skills/chatbotx-mcp/SKILL.md` of this repository.
+are in `skills/hitechcloudomnichannel-mcp/SKILL.md` of this repository.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Compares the live upstream surface (scripts/upstream/surface.mjs) against
-// this repo's hand-written docs (skills/chatbotx/references/commands.md,
-// skills/chatbotx/SKILL.md's collision section, skills/chatbotx-mcp/SKILL.md's
+// this repo's hand-written docs (skills/hitechcloudomnichannel/references/commands.md,
+// skills/hitechcloudomnichannel/SKILL.md's collision section, skills/hitechcloudomnichannel-mcp/SKILL.md's
 // default-tool table) and against the version pinned in upstream.json.
 // Exits 1 when tracked surface drift is found and 2 when the check cannot run.
 
@@ -15,24 +15,24 @@ const REPO_ROOT = join(__dirname, "..", "..");
 
 const COMMANDS_MD = join(
   REPO_ROOT,
-  "skills/chatbotx/references/commands.md",
+  "skills/hitechcloudomnichannel/references/commands.md",
 );
-const CLI_SKILL_MD = join(REPO_ROOT, "skills/chatbotx/SKILL.md");
-const MCP_SKILL_MD = join(REPO_ROOT, "skills/chatbotx-mcp/SKILL.md");
+const CLI_SKILL_MD = join(REPO_ROOT, "skills/hitechcloudomnichannel/SKILL.md");
+const MCP_SKILL_MD = join(REPO_ROOT, "skills/hitechcloudomnichannel-mcp/SKILL.md");
 const UPSTREAM_JSON = join(REPO_ROOT, "upstream.json");
 
 // --- doc parsers -------------------------------------------------------------
 
 /**
- * Extract every `chatbotx <group> [<subgroup>] [<action>]` command path found
+ * Extract every `hitechcloudomnichannel <group> [<subgroup>] [<action>]` command path found
  * in fenced bash blocks of commands.md. A line is read up to (but not
  * including) the first token that is a positional (`<...>`), a flag (`--x`),
  * or a comment (`#`).
  *
  * commands.md also shorthands a run of sibling actions sharing one group on
- * a single line as `chatbotx <group> action1 [<param>] / action2 [<param>] /
- * action3` (e.g. `chatbotx sequences list / get / create / update / delete`,
- * or `chatbotx ads campaigns-publish <id> / campaigns-pause <id>`). Every
+ * a single line as `hitechcloudomnichannel <group> action1 [<param>] / action2 [<param>] /
+ * action3` (e.g. `hitechcloudomnichannel sequences list / get / create / update / delete`,
+ * or `hitechcloudomnichannel ads campaigns-publish <id> / campaigns-pause <id>`). Every
  * observed instance in this doc puts the group as the line's first bare
  * word and never shorthands a multi-word group/subgroup path, so splitting
  * the line on `/` and re-prefixing each `/`-separated segment with that
@@ -45,14 +45,14 @@ export function parseCommandsDoc(markdown) {
   while ((fenceMatch = fenceRe.exec(markdown))) {
     for (const rawLine of fenceMatch[1].split("\n")) {
       const line = rawLine.trim();
-      if (!line.startsWith("chatbotx ")) {
+      if (!line.startsWith("hitechcloudomnichannel ")) {
         continue;
       }
       // Strip a trailing `# ...` comment first, so a `/` appearing only in a
       // comment (e.g. an option like `make|n8n`) never reaches the
       // shorthand-splitting logic below.
       const withoutComment = line.split(/\s#/)[0].trim();
-      const body = withoutComment.slice("chatbotx ".length);
+      const body = withoutComment.slice("hitechcloudomnichannel ".length);
 
       const segments = body.split("/").map((s) => s.trim());
       const group = segments[0].split(/\s+/)[0];
@@ -83,8 +83,8 @@ export function parseCommandsDoc(markdown) {
  * `## Command-name collisions` section (up to the next `## ` heading).
  * Each backtick span there is a full CLI invocation, e.g.
  * `` `bot-fields update <idOrName> --value <value>` `` or
- * `` `chatbotx contacts message send` ``. This reads every span's leading
- * bare-word tokens (dropping an optional `chatbotx` prefix, stopping at the
+ * `` `hitechcloudomnichannel contacts message send` ``. This reads every span's leading
+ * bare-word tokens (dropping an optional `hitechcloudomnichannel` prefix, stopping at the
  * first positional `<...>`, flag `--x`, or quoted string) and normalizes to
  * `group:sub:action` form to compare against the CLI's own
  * `group:sub:action` collision warnings.
@@ -110,7 +110,7 @@ export function parseCollisionsDoc(markdown) {
       continue;
     }
     let tokens = raw.split(/\s+/);
-    if (tokens[0] === "chatbotx") {
+    if (tokens[0] === "hitechcloudomnichannel") {
       tokens = tokens.slice(1);
     }
     const pathTokens = [];
@@ -197,8 +197,8 @@ function setDiff(upstreamList, docList) {
 
 export function diffSurface({ surface, docs, pins }) {
   const versions = {
-    cli: { pinned: pins.chatbotx, live: surface.cli.version },
-    mcp: { pinned: pins["chatbotx-mcp"], live: surface.mcp.version },
+    cli: { pinned: pins.hitechcloudomnichannel, live: surface.cli.version },
+    mcp: { pinned: pins["hitechcloudomnichannel-mcp"], live: surface.mcp.version },
   };
   const versionsDrifted =
     versions.cli.pinned !== versions.cli.live ||
@@ -236,7 +236,7 @@ export function renderReport(diff, { surface }) {
   const lines = [];
   lines.push("<!-- upstream-drift -->");
   lines.push(
-    `# Upstream drift: chatbotx@${surface.cli.version} / chatbotx-mcp@${surface.mcp.version}`,
+    `# Upstream drift: hitechcloudomnichannel@${surface.cli.version} / hitechcloudomnichannel-mcp@${surface.mcp.version}`,
   );
   lines.push("");
   lines.push(
@@ -261,10 +261,10 @@ export function renderReport(diff, { surface }) {
     lines.push("## Version pin");
     lines.push("");
     lines.push(
-      `- \`upstream.json\` pins \`chatbotx@${diff.versions.cli.pinned}\`, npm \`latest\` is \`${diff.versions.cli.live}\`.`,
+      `- \`upstream.json\` pins \`hitechcloudomnichannel@${diff.versions.cli.pinned}\`, npm \`latest\` is \`${diff.versions.cli.live}\`.`,
     );
     lines.push(
-      `- \`upstream.json\` pins \`chatbotx-mcp@${diff.versions.mcp.pinned}\`, npm \`latest\` is \`${diff.versions.mcp.live}\`.`,
+      `- \`upstream.json\` pins \`hitechcloudomnichannel-mcp@${diff.versions.mcp.pinned}\`, npm \`latest\` is \`${diff.versions.mcp.live}\`.`,
     );
     if (!diff.surfaceChanged) {
       lines.push(
@@ -275,7 +275,7 @@ export function renderReport(diff, { surface }) {
   }
 
   if (diff.cli.added.length > 0 || diff.cli.removed.length > 0) {
-    lines.push("## CLI commands (skills/chatbotx/references/commands.md)");
+    lines.push("## CLI commands (skills/hitechcloudomnichannel/references/commands.md)");
     lines.push("");
     lines.push("**In the live CLI but missing from docs:**");
     lines.push(listOrNone(diff.cli.added));
@@ -287,7 +287,7 @@ export function renderReport(diff, { surface }) {
 
   if (diff.collisions.added.length > 0 || diff.collisions.removed.length > 0) {
     lines.push(
-      "## Command-name collisions (skills/chatbotx/SKILL.md § Command-name collisions)",
+      "## Command-name collisions (skills/hitechcloudomnichannel/SKILL.md § Command-name collisions)",
     );
     lines.push("");
     lines.push("**New collision warnings not yet documented:**");
@@ -300,7 +300,7 @@ export function renderReport(diff, { surface }) {
 
   if (diff.mcp.added.length > 0 || diff.mcp.removed.length > 0) {
     lines.push(
-      "## MCP default tools (skills/chatbotx-mcp/SKILL.md § Default tools)",
+      "## MCP default tools (skills/hitechcloudomnichannel-mcp/SKILL.md § Default tools)",
     );
     lines.push("");
     lines.push("**Default-visible tools missing from the docs table:**");
@@ -374,8 +374,8 @@ export function validateSurface(surface) {
 
 export function validatePins(pins) {
   requireObject(pins, "upstream.json");
-  requireString(pins.chatbotx, "upstream.json chatbotx");
-  requireString(pins["chatbotx-mcp"], "upstream.json chatbotx-mcp");
+  requireString(pins.hitechcloudomnichannel, "upstream.json hitechcloudomnichannel");
+  requireString(pins["hitechcloudomnichannel-mcp"], "upstream.json hitechcloudomnichannel-mcp");
 }
 
 export async function main(argv = process.argv.slice(2)) {

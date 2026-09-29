@@ -1,14 +1,14 @@
-chatbotx conversations attribute
+hitechcloudomnichannel conversations attribute
 
 attribute commands
 
 Commands:
-  chatbotx conversations attribute add      Change message liked/hidden
+  hitechcloudomnichannel conversations attribute add      Change message liked/hidden
   <conversationId> <messageId>              attributes
 
 Options:
-      --apiKey               ChatbotX API key (global)                  [string]
-      --apiUrl               ChatbotX API URL (global)                  [string]
+      --apiKey               HiTechCloudOmnichannel API key (global)                  [string]
+      --apiUrl               HiTechCloudOmnichannel API URL (global)                  [string]
       --allowSelfSignedCert  Disable TLS cert validation (local dev only)
                                                                        [boolean]
       --refresh-spec         Force refresh the cached OpenAPI spec

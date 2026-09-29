@@ -52,7 +52,7 @@ describe("parseHelpCommands", () => {
     );
     assert.deepEqual(groups, []);
     assert.ok(actions.includes("contacts tags list"));
-    // "chatbotx contacts tags update             Replace all tags on contact\n<identifier>"
+    // "hitechcloudomnichannel contacts tags update             Replace all tags on contact\n<identifier>"
     // wraps the positional onto its own line — must not be misread as a
     // second command.
     assert.ok(actions.includes("contacts tags update"));
@@ -67,9 +67,9 @@ describe("parseHelpCommands", () => {
   });
 
   test("reattaches a wrapped path tail (flush-left continuation) to the action, not the group", () => {
-    // `chatbotx analytics` help: many rows wrap their long action name onto
+    // `hitechcloudomnichannel analytics` help: many rows wrap their long action name onto
     // a flush-left continuation line, e.g.
-    //   "  chatbotx analytics                        Get contact counts per day"
+    //   "  hitechcloudomnichannel analytics                        Get contact counts per day"
     //   "  contact-counts-per-day"
     // A prior version of this parser misread the first line alone as the
     // bare action "analytics" (dropping the wrapped tail entirely).
@@ -89,8 +89,8 @@ describe("parseHelpCommands", () => {
   });
 
   test("splits a continuation line that wraps both the path tail and the description tail at once", () => {
-    // `chatbotx integrations` help:
-    //   "  chatbotx integrations                     List channel integrations with"
+    // `hitechcloudomnichannel integrations` help:
+    //   "  hitechcloudomnichannel integrations                     List channel integrations with"
     //   "  status-token-errors                       failed token refresh"
     // The continuation line carries the wrapped path tail
     // ("status-token-errors") AND the wrapped description tail ("failed
@@ -107,8 +107,8 @@ describe("parseHelpCommands", () => {
   });
 
   test("strips two positionals wrapped together on one flush-left continuation, keeping the description tail separate", () => {
-    // `chatbotx conversations attribute` help:
-    //   "  chatbotx conversations attribute add      Change message liked/hidden"
+    // `hitechcloudomnichannel conversations attribute` help:
+    //   "  hitechcloudomnichannel conversations attribute add      Change message liked/hidden"
     //   "  <conversationId> <messageId>              attributes"
     // The continuation's path-tail is itself two space-separated positionals
     // (only one space between them, not the 2+ that marks the description
@@ -122,8 +122,8 @@ describe("parseHelpCommands", () => {
   });
 
   test("reattaches a one-word path tail plus a multi-word description tail from the same continuation line", () => {
-    // `chatbotx messenger-channels tag-sync` help:
-    //   "  chatbotx messenger-channels tag-sync      Enable or disable tag sync for"
+    // `hitechcloudomnichannel messenger-channels tag-sync` help:
+    //   "  hitechcloudomnichannel messenger-channels tag-sync      Enable or disable tag sync for"
     //   "  update <id>                               Messenger channel"
     const { actions, groups } = parseHelpCommands(
       fixture("help-messenger-channels-tag-sync.txt"),
@@ -133,7 +133,7 @@ describe("parseHelpCommands", () => {
   });
 
   test("handles a group whose subgroup listing itself wraps path and description", () => {
-    // `chatbotx appointment-calendars` help mixes all three continuation
+    // `hitechcloudomnichannel appointment-calendars` help mixes all three continuation
     // shapes in one block: plain positional wraps (`update`/`delete <id>`),
     // description-only wraps (`active`/`duplicate` -> "... commands"), and a
     // combined path+description wrap (`availability` group name split from
@@ -207,7 +207,7 @@ describe("collectCliSurface", () => {
     const runHelp = () => {
       calls++;
       return {
-        stdout: "Commands:\n  chatbotx deep  deep commands\n",
+        stdout: "Commands:\n  hitechcloudomnichannel deep  deep commands\n",
         stderr: "",
       };
     };
@@ -230,7 +230,7 @@ describe("runNpxHelp", () => {
         runNpxHelp({
           version: "1.8.4",
           apiUrl: "https://app.hitechcloud.vn/api",
-          tmpHome: "/tmp/chatbotx-drift",
+          tmpHome: "/tmp/hitechcloudomnichannel-drift",
           pathTokens: [],
           spawnSyncImpl: () => ({
             status: 1,
@@ -324,7 +324,7 @@ describe("surface CLI entrypoint", () => {
       { cliVersion: "1.8.4", out: "surface.json" },
     );
 
-    const directory = mkdtempSync(join(tmpdir(), "chatbotx-surface-test-"));
+    const directory = mkdtempSync(join(tmpdir(), "hitechcloudomnichannel-surface-test-"));
     const out = join(directory, "surface.json");
     try {
       const surface = await collectSurfaceMain(

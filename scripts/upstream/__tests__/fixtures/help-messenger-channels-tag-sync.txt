@@ -1,14 +1,14 @@
-chatbotx messenger-channels tag-sync
+hitechcloudomnichannel messenger-channels tag-sync
 
 tag-sync commands
 
 Commands:
-  chatbotx messenger-channels tag-sync      Enable or disable tag sync for
+  hitechcloudomnichannel messenger-channels tag-sync      Enable or disable tag sync for
   update <id>                               Messenger channel
 
 Options:
-      --apiKey               ChatbotX API key (global)                  [string]
-      --apiUrl               ChatbotX API URL (global)                  [string]
+      --apiKey               HiTechCloudOmnichannel API key (global)                  [string]
+      --apiUrl               HiTechCloudOmnichannel API URL (global)                  [string]
       --allowSelfSignedCert  Disable TLS cert validation (local dev only)
                                                                        [boolean]
       --refresh-spec         Force refresh the cached OpenAPI spec

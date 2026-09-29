@@ -215,7 +215,7 @@ describe("parseMcpDefaultTools", () => {
 });
 
 describe("diffSurface", () => {
-  const basePins = { hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel: "1.8.4", "chatbotx-mcp": "1.8.0" };
+  const basePins = { hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel: "1.8.4", "hitechcloudomnichannel-mcp": "1.8.0" };
   const baseSurface = {
     cli: { version: "1.8.4", commands: ["contacts list"], collisions: [] },
     mcp: { version: "1.8.0", defaultTools: ["contacts_create"] },
@@ -236,7 +236,7 @@ describe("diffSurface", () => {
     const diff = diffSurface({
       surface: baseSurface,
       docs: baseDocs,
-      pins: { ...basePins, chatbotx: "1.8.3" },
+      pins: { ...basePins, hitechcloudomnichannel: "1.8.3" },
     });
     assert.equal(diff.hasDrift, true);
     assert.equal(diff.versionsDrifted, true);
@@ -327,7 +327,7 @@ describe("renderReport", () => {
         collisions: [],
         mcpDefaultTools: ["contacts_create"],
       },
-      pins: { chatbotx: "1.8.4", "chatbotx-mcp": "1.8.0" },
+      pins: { hitechcloudomnichannel: "1.8.4", "hitechcloudomnichannel-mcp": "1.8.0" },
     });
     const report = renderReport(diff, { surface: { ...surface, cli: { version: "1.8.5" } } });
     assert.ok(report.includes("version-only bump"));
@@ -346,7 +346,7 @@ describe("renderReport", () => {
         collisions: [],
         mcpDefaultTools: ["contacts_create"],
       },
-      pins: { chatbotx: "1.8.4", "chatbotx-mcp": "1.8.0" },
+      pins: { hitechcloudomnichannel: "1.8.4", "hitechcloudomnichannel-mcp": "1.8.0" },
     });
     const report = renderReport(diff, { surface });
     assert.ok(report.includes("## MCP default tools"));
@@ -378,19 +378,19 @@ describe("check-drift CLI entrypoint", () => {
       { surfaceArgs: [], surfacePath: "surface.json", report: "report.md" },
     );
 
-    const directory = mkdtempSync(join(tmpdir(), "chatbotx-drift-test-"));
+    const directory = mkdtempSync(join(tmpdir(), "hitechcloudomnichannel-drift-test-"));
     const checker = join(REPO_ROOT, "scripts/upstream/check-drift.mjs");
     const pins = JSON.parse(readFileSync(join(REPO_ROOT, "upstream.json"), "utf8"));
     const matchingSurface = {
       collectedAt: "2026-09-22T00:00:00.000Z",
       specUrl: "https://app.hitechcloud.vn/api/public-spec.json",
       cli: {
-        version: pins.chatbotx,
+        version: pins.hitechcloudomnichannel,
         commands: parseCommandsDoc(realCommandsMd()),
         collisions: parseCollisionsDoc(realCliSkillMd()),
       },
       mcp: {
-        version: pins["chatbotx-mcp"],
+        version: pins["hitechcloudomnichannel-mcp"],
         defaultTools: parseMcpDefaultTools(realMcpSkillMd()),
       },
     };
