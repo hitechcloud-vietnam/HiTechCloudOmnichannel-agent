@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="HiTechCloudOmnichannel" width="96" />
+  <img src="https://hitechcloud.vn/wp-content/uploads/2025/01/hitechcloudvn.svg" alt="HiTechCloudOmnichannel" width="96" />
 </p>
 
 # HiTechCloudOmnichannel Agent
