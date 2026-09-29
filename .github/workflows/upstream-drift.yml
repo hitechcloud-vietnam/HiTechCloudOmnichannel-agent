@@ -2,7 +2,7 @@ name: Upstream drift check
 
 # Checks the live, published `hitechcloudomnichannel` CLI (npm) and the live
 # `hitechcloudomnichannel-mcp` default tool set (fetched from hitechcloud-vietnam/hitechcloudomnichannel's public
-# https://app.hitechcloud.vn/api/public-spec.json) against the hand-written
+# https://raw.githubusercontent.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/refs/heads/main/public-spec.json) against the hand-written
 # docs in skills/, and against the version pinned in upstream.json.
 #
 # Pull-only by design: this repo has no push access to hitechcloud-vietnam/hitechcloudomnichannel

@@ -1,5 +1,5 @@
 {
-  "specUrl": "https://app.hitechcloud.vn/api/public-spec.json",
+  "specUrl": "https://raw.githubusercontent.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/refs/heads/main/public-spec.json",
   "hitechcloudomnichannel": "1.8.4",
   "hitechcloudomnichannel-mcp": "1.8.0"
 }
