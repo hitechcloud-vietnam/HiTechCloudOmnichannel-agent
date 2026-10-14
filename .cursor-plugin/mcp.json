@@ -3,7 +3,7 @@
     "command": "npx",
     "args": ["-y", "hitechcloudomnichannel-mcp"],
     "env": {
-      "HITECHCLOUDOMNICHANNEL_API_KEY": "${HiTechCloudOmnichannel_API_KEY}",
+      "HITECHCLOUDOMNICHANNEL_API_KEY": "${HITECHCLOUDOMNICHANNEL_API_KEY}",
       "HITECHCLOUDOMNICHANNEL_API_URL": "https://app.hitechcloud.vn/api",
       "HITECHCLOUDOMNICHANNEL_MCP_TRANSPORT": "stdio"
     }

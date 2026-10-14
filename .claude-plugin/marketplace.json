@@ -1,5 +1,5 @@
 {
-  "name": "HiTechCloudOmnichannel-agent",
+  "name": "hitechcloudomnichannel-agent",
   "owner": {
     "name": "hitechcloud-vietnam",
     "email": "support@hitechcloud.vn"
@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "HiTechCloudOmnichannel",
+      "name": "hitechcloudomnichannel",
       "description": "HiTechCloudOmnichannel CLI and MCP workflows for contacts, conversations, flows, broadcasts, sequences, analytics, and omnichannel messaging.",
       "source": "./"
     }

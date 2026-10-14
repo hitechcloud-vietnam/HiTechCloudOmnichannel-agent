@@ -39,7 +39,7 @@ const MARGIN_INDENT = 2;
 
 // A description column reading exactly "<name> commands" marks a yargs group
 // or subgroup rather than a leaf action (see registerGroupCommand /
-// registerActionsOnCli in hitechcloudomnichannel's apps/cli/src/index.ts).
+// registerActionsOnCli in HiTechCloudOmnichannel's apps/cli/src/index.ts).
 const GROUP_DESC_RE = /^(\S+) commands$/;
 
 /**
@@ -229,7 +229,7 @@ export function runNpxHelp({
 const HTTP_METHODS = new Set(["get", "post", "put", "patch", "delete"]);
 
 /**
- * Verbatim copy of hitechcloudomnichannel's apps/mcp-server/src/openapi-loader.ts
+ * Verbatim copy of HiTechCloudOmnichannel's apps/mcp-server/src/openapi-loader.ts
  * `toSnakeCase` — MCP tool names are `toSnakeCase(operationId)`. Kept here
  * only to reproduce the *documented* tool name from the live spec's
  * `operationId`, not as a reimplementation of loader logic.
