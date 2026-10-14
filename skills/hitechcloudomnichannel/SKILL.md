@@ -1,6 +1,6 @@
 ---
 name: hitechcloudomnichannel
-description: Manage contacts, conversations, broadcasts, flows, sequences, appointments, minigames, and every other hitechcloudomnichannel workspace resource from the command line.
+description: Manage contacts, conversations, broadcasts, flows, sequences, appointments, minigames, and every other HiTechCloudOmnichannel workspace resource from the command line.
 allowed-tools: Bash(hitechcloudomnichannel:*)
 version: 1.1.1
 homepage: https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/tree/main/skills/hitechcloudomnichannel
@@ -31,7 +31,7 @@ metadata:
         bins: [hitechcloudomnichannel]
 ---
 
-# hitechcloudomnichannel
+# HiTechCloudOmnichannel
 
 Use the `hitechcloudomnichannel` CLI to manage a HiTechCloudOmnichannel workspace: contacts, conversations, broadcasts, flows,
 sequences, appointments, minigames, analytics, and the rest of the workspace API. Commands are
@@ -54,7 +54,7 @@ the authoritative reference and this document can lag behind it.
 4. Verify every write with the matching `get` or `list` command. An exit code of `0` is not proof:
    a command affected by a name collision (see below) can do nothing and still exit `0`.
 5. Never expose API keys, saved config, or unredacted contact data in responses.
-   `~/.hitechcloudomnichannel/config.json` holds plaintext credentials. Treat it as a secret file.
+   `~/.hiTechCloudOmnichannel/config.json` holds plaintext credentials. Treat it as a secret file.
 
 ## Setup
 
@@ -77,7 +77,7 @@ hitechcloudomnichannel config set --allowSelfSignedCert true
 
 Global options work on every command. `--apiKey`, `--apiUrl`, and `--allowSelfSignedCert` each
 override the saved config for one run. `--refresh-spec` re-fetches the OpenAPI spec and clears the
-1-hour cache at `~/.hitechcloudomnichannel/openapi-cache.json`. Use it, or set `HITECHCLOUDOMNICHANNEL_SPEC_CACHE_TTL_SECONDS`,
+1-hour cache at `~/.hiTechCloudOmnichannel/openapi-cache.json`. Use it, or set `HITECHCLOUDOMNICHANNEL_SPEC_CACHE_TTL_SECONDS`,
 when a command is missing after a workspace API upgrade.
 
 ## Output and errors
@@ -99,12 +99,12 @@ Errors come back as `{"error": true, "message": "...", "status": <httpStatus>}`.
 ```bash
 # 1. Discover what a workspace token can see
 hitechcloudomnichannel capabilities list
-hitechcloudomnichanneloudomnichannel token list
+hitechcloudomnichannel token list
 
 # 2. Look up the ids you need — most write commands take an id, not a name
-hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichannel inboxes list
-hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel contacts list --keyword "jane"
-hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel tags list
+hitechcloudomnichannel inboxes list
+hitechcloudomnichannel contacts list --keyword "jane"
+hitechcloudomnichannel tags list
 
 # 3. Act
 hitechcloudomnichannel contacts message send email:jane@example.com --text "Hi Jane!" --inboxId <inboxId>

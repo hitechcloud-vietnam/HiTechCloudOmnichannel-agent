@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://hitechcloud.vn/wp-content/uploads/2025/01/hitechcloudvn.svg" alt="HiTechCloudOmnichannel" width="160" />
+  <img src="assets/logo.svg" alt="HiTechCloudOmnichannel" width="96" />
 </p>
 
 # HiTechCloudOmnichannel Agent
@@ -57,7 +57,7 @@ run `npm install -g hitechcloudomnichannel` on first use if the command is missi
 
 ```bash
 /plugin marketplace add hitechcloud-vietnam/HiTechCloudOmnichannel-agent
-/plugin install hitechcloudomnichannel@HiTechCloudOmnichannel-agent
+/plugin install hitechcloudomnichannel@hitechcloudomnichannel-agent
 ```
 
 The plugin loads both skills and starts the HiTechCloudOmnichannel MCP server. Claude Code asks only for the API
@@ -80,7 +80,7 @@ This repo ships a Cursor plugin at `.cursor-plugin/` (skills + MCP server + vari
 ```bash
 git clone https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent.git
 mkdir -p ~/.cursor/plugins/local
-ln -s "$(pwd)/HiTechCloudOmnichannel-agent" ~/.cursor/plugins/local/hitechcloudomnichannel
+ln -s "$(pwd)/hitechcloudomnichannel-agent" ~/.cursor/plugins/local/hitechcloudomnichannel
 ```
 
 Restart Cursor or run **Developer: Reload Window**, then set `HITECHCLOUDOMNICHANNEL_API_KEY` in the plugin
@@ -150,7 +150,7 @@ There is deliberately no `SKILL.md` at the repository root: a root skill would s
 ## Keeping in sync with upstream
 
 The `hitechcloudomnichannel` CLI and `hitechcloudomnichannel-mcp` server (both in
-[`hitechcloud-vietnam/hitechcloudomnichannel`](https://github.com/hitechcloud-vietnam/hitechcloudomnichannel)) generate their command/tool surface
+[`hitechcloud-vietnam/HiTechCloudOmnichannel`](https://github.com/hitechcloud-vietnam/HiTechCloudOmnichannel)) generate their command/tool surface
 at runtime from the live `GET {API_URL}/public-spec.json`. That means this repo's docs can drift from
 what an agent actually sees in two independent ways:
 
@@ -171,7 +171,7 @@ what an agent actually sees in two independent ways:
 - opens or updates a single GitHub issue labeled `upstream-drift` describing exactly what changed,
   and closes it automatically once a later run finds the docs match again.
 
-This repo is pull-only with respect to `hitechcloud-vietnam/hitechcloudomnichannel` — it has no push access there and no
+This repo is pull-only with respect to `hitechcloud-vietnam/HiTechCloudOmnichannel` — it has no push access there and no
 cross-repo token, so it never edits that repo. A `repository_dispatch` trigger (`upstream-published`)
 is wired up so that repo could push an immediate check instead of waiting for the next scheduled run,
 but nothing there calls it yet.
@@ -224,6 +224,6 @@ npm view hitechcloudomnichannel-mcp version
 
 ## Safety
 
-hitechcloudomnichannel agents can mutate live workspace data and send messages to real contacts. Use
+HiTechCloudOmnichannel agents can mutate live workspace data and send messages to real contacts. Use
 least-privilege workspace API keys, verify recipient/audience counts before writes, and prefer
 read-only tokens for discovery tasks.

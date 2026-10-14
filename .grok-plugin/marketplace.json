@@ -1,11 +1,11 @@
 {
-  "name": "HiTechCloudOmnichannel-agent",
+  "name": "hitechcloudomnichannel-agent",
   "owner": {
     "name": "hitechcloud-vietnam",
     "email": "support@hitechcloud.vn"
   },
   "metadata": {
-    "description": "hitechcloudomnichannel CLI and MCP workflows for AI agents"
+    "description": "HiTechCloudOmnichannel CLI and MCP workflows for AI agents"
   },
   "plugins": [
     {

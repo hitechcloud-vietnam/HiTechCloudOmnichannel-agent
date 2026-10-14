@@ -85,7 +85,7 @@ describe("parseCommandsDoc", () => {
   test("does not produce a trailing-whitespace command when a comment follows extra spaces", () => {
     const md = [
       "```bash",
-      "hitechcloudomnichanneloudomnichannel ads conversion-rules                              # see collisions",
+      "hitechcloudomnichannel ads conversion-rules                              # see collisions",
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), ["ads conversion-rules"]);
@@ -93,9 +93,9 @@ describe("parseCommandsDoc", () => {
 
   test("ignores non-command lines and non-bash fences", () => {
     const md = [
-      "Some prose about `hitechcloudomnichanneloudomnichannel contacts get` mentioned inline.",
+      "Some prose about `hitechcloudomnichannel contacts get` mentioned inline.",
       "```json",
-      '{ "hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichannel": "not a command line" }',
+      '{ "hitechcloudomnichannel": "not a command line" }',
       "```",
     ].join("\n");
     assert.deepEqual(parseCommandsDoc(md), []);
@@ -215,7 +215,7 @@ describe("parseMcpDefaultTools", () => {
 });
 
 describe("diffSurface", () => {
-  const basePins = { hitechcloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichanneloudomnichannel: "1.8.4", "hitechcloudomnichannel-mcp": "1.8.0" };
+  const basePins = { hitechcloudomnichannel: "1.8.4", "hitechcloudomnichannel-mcp": "1.8.0" };
   const baseSurface = {
     cli: { version: "1.8.4", commands: ["contacts list"], collisions: [] },
     mcp: { version: "1.8.0", defaultTools: ["contacts_create"] },
@@ -275,7 +275,7 @@ describe("diffSurface", () => {
 describe("renderReport", () => {
   const surface = {
     collectedAt: "2026-09-22T00:00:00.000Z",
-    specUrl: "https://raw.githubusercontent.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/refs/heads/main/public-spec.json",
+    specUrl: "https://app.hitechcloud.vn/api/public-spec.json",
     cli: { version: "1.8.4" },
     mcp: { version: "1.8.0" },
   };
@@ -383,7 +383,7 @@ describe("check-drift CLI entrypoint", () => {
     const pins = JSON.parse(readFileSync(join(REPO_ROOT, "upstream.json"), "utf8"));
     const matchingSurface = {
       collectedAt: "2026-09-22T00:00:00.000Z",
-      specUrl: "https://raw.githubusercontent.com/hitechcloud-vietnam/HiTechCloudOmnichannel-agent/refs/heads/main/public-spec.json",
+      specUrl: "https://app.hitechcloud.vn/api/public-spec.json",
       cli: {
         version: pins.hitechcloudomnichannel,
         commands: parseCommandsDoc(realCommandsMd()),

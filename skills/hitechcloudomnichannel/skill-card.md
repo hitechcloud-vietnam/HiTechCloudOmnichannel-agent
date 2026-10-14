@@ -17,7 +17,7 @@ hitechcloud-vietnam — HiTechCloudOmnichannel agent distribution maintainers (g
 This skill package (SKILL.md, skill-card.md, and this folder) is published to ClawHub under
 MIT-0, per ClawHub's publishing policy. The underlying `hitechcloudomnichannel` npm CLI and the HiTechCloudOmnichannel
 platform it talks to are licensed separately — see `LICENSE` at the repository root
-(AhaChat LLC, with third-party and enterprise-directory exceptions listed there). Using this
+(Pho Tue Software Solutions JSC, with third-party and enterprise-directory exceptions listed there). Using this
 skill still requires a HiTechCloudOmnichannel workspace and API key subject to HiTechCloudOmnichannel's own terms of service.
 
 ## Use Case
@@ -57,13 +57,13 @@ Mitigation: Resolve and review exact target ids/filters with the matching `list`
 before running a bulk or delete command; consult the "Command-name collisions" section of
 this skill's `SKILL.md` before relying on a delete-by-id or update-by-id variant.
 
-Risk: Credentials are stored in plaintext at `~/.hitechcloudomnichannel/config.json` (or shell environment
+Risk: Credentials are stored in plaintext at `~/.hiTechCloudOmnichannel/config.json` (or shell environment
 variables) and sent with every request to the configured API URL.
-Mitigation: Treat `~/.hitechcloudomnichannel/config.json` as a secret file; use a scoped API key; only pass
+Mitigation: Treat `~/.hiTechCloudOmnichannel/config.json` as a secret file; use a scoped API key; only pass
 `--allowSelfSignedCert` against a trusted local/dev instance, never a production endpoint.
 
 Risk: Generated commands come from the workspace's live OpenAPI spec (cached for 1 hour at
-`~/.hitechcloudomnichannel/openapi-cache.json`); a stale cache can make a recently added/changed API invisible or
+`~/.hiTechCloudOmnichannel/openapi-cache.json`); a stale cache can make a recently added/changed API invisible or
 mis-shaped to the CLI.
 Mitigation: Pass `--refresh-spec` (or set `HITECHCLOUDOMNICHANNEL_SPEC_CACHE_TTL_SECONDS`) after a known API
 change, and confirm a write with a follow-up `get`/`list` rather than trusting the command's own
